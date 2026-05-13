@@ -20,20 +20,45 @@ st.set_page_config(
 # inside a local .env file while developing on your computer.
 load_dotenv()
 
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+def get_setting(name):
+    """Read settings from Streamlit secrets first, then local environment."""
+    try:
+        value = st.secrets.get(name)
+    except Exception:
+        value = None
+
+    return value or os.getenv(name)
+
+
+SUPABASE_URL = get_setting("SUPABASE_URL")
+SUPABASE_KEY = get_setting("SUPABASE_KEY")
 
 # --------------------------------------------------
 # Check whether credentials exist
 # --------------------------------------------------
-if not SUPABASE_URL or not SUPABASE_KEY:
-    st.error("Supabase credentials are missing. Please set SUPABASE_URL and SUPABASE_KEY.")
+if (
+    not SUPABASE_URL
+    or not SUPABASE_KEY
+    or "your-" in SUPABASE_URL.lower()
+    or "your-" in SUPABASE_KEY.lower()
+):
+    st.error(
+        "Supabase credentials are missing or still using placeholder values. "
+        "Set SUPABASE_URL and SUPABASE_KEY in Streamlit Cloud secrets."
+    )
     st.stop()
 
 # --------------------------------------------------
 # Create Supabase client connection
 # --------------------------------------------------
-supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+try:
+    supabase = create_client(SUPABASE_URL.strip(), SUPABASE_KEY.strip())
+except Exception:
+    st.error(
+        "Supabase connection failed. Check that SUPABASE_URL and SUPABASE_KEY "
+        "in Streamlit Cloud secrets are copied exactly from your Supabase project."
+    )
+    st.stop()
 
 # These fields are used if the customers table is empty.
 # If your table already has data, the app will use the existing table columns.
