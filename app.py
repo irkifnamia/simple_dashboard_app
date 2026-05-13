@@ -688,6 +688,403 @@ def show_vega_chart(chart_spec, chart_data):
     st.vega_lite_chart(chart_spec, use_container_width=True)
 
 
+MALAYSIA_STATE_ALIASES = {
+    "johor": "Johor",
+    "kedah": "Kedah",
+    "kelantan": "Kelantan",
+    "melaka": "Melaka",
+    "malacca": "Melaka",
+    "negeri sembilan": "Negeri Sembilan",
+    "n sembilan": "Negeri Sembilan",
+    "pahang": "Pahang",
+    "penang": "Pulau Pinang",
+    "pulau pinang": "Pulau Pinang",
+    "perak": "Perak",
+    "perlis": "Perlis",
+    "sabah": "Sabah",
+    "sarawak": "Sarawak",
+    "selangor": "Selangor",
+    "terengganu": "Terengganu",
+    "kuala lumpur": "Kuala Lumpur",
+    "wp k lumpur": "Kuala Lumpur",
+    "wp kuala lumpur": "Kuala Lumpur",
+    "w.p. kuala lumpur": "Kuala Lumpur",
+    "wilayah persekutuan kuala lumpur": "Kuala Lumpur",
+    "putrajaya": "Putrajaya",
+    "wp putrajaya": "Putrajaya",
+    "w.p. putrajaya": "Putrajaya",
+    "labuan": "Labuan",
+    "wp labuan": "Labuan",
+    "w.p. labuan": "Labuan",
+}
+
+
+MALAYSIA_STATE_GEOJSON_URL = (
+    "https://raw.githubusercontent.com/mptwaktusolat/"
+    "jakim.geojson/master/malaysia.state.geojson"
+)
+
+
+def normalize_malaysia_state(value):
+    """Return a consistent Malaysia state name for grouping."""
+    if pd.isna(value):
+        return "Unknown"
+
+    clean_value = str(value).strip()
+    if not clean_value:
+        return "Unknown"
+
+    return MALAYSIA_STATE_ALIASES.get(clean_value.lower(), clean_value.title())
+
+
+def interpolate_hex_color(start_hex, end_hex, fraction):
+    """Blend two hex colors for the map heat scale."""
+    safe_fraction = max(0, min(1, fraction))
+    start_rgb = tuple(int(start_hex[index:index + 2], 16) for index in (1, 3, 5))
+    end_rgb = tuple(int(end_hex[index:index + 2], 16) for index in (1, 3, 5))
+    blended = tuple(
+        round(start + (end - start) * safe_fraction)
+        for start, end in zip(start_rgb, end_rgb)
+    )
+    return "#{:02x}{:02x}{:02x}".format(*blended)
+
+
+def get_state_average_map_data(customers_df, metric_column):
+    """Calculate state averages for Malaysia map charts."""
+    if "state" not in customers_df.columns or metric_column not in customers_df.columns:
+        return pd.DataFrame()
+
+    map_df = customers_df.copy()
+    map_df["Malaysia State"] = map_df["state"].apply(normalize_malaysia_state)
+    map_df[metric_column] = get_numeric_column(map_df, metric_column)
+    map_df = map_df[map_df["Malaysia State"] != "Unknown"]
+
+    if map_df.empty:
+        return pd.DataFrame()
+
+    return (
+        map_df.groupby("Malaysia State", as_index=False)
+        .agg(Average=(metric_column, "mean"), Customers=(metric_column, "size"))
+        .sort_values("Average", ascending=False)
+    )
+
+
+@st.cache_data(ttl=3600)
+def load_malaysia_state_geojson():
+    """Fetch Malaysia state boundaries used by the choropleth maps."""
+    response = requests.get(MALAYSIA_STATE_GEOJSON_URL, timeout=20)
+    response.raise_for_status()
+    return response.json()
+
+
+def get_geojson_state_name(properties):
+    """Find the state name field used in the Malaysia GeoJSON."""
+    for key in ["name", "Name", "state_name", "state", "STATE", "shapeName"]:
+        if key in properties and properties[key]:
+            return normalize_malaysia_state(properties[key])
+
+    return "Unknown"
+
+
+def get_geometry_rings(geometry):
+    """Return all polygon rings from a GeoJSON geometry."""
+    geometry_type = geometry.get("type")
+    coordinates = geometry.get("coordinates", [])
+
+    if geometry_type == "Polygon":
+        return coordinates
+
+    if geometry_type == "MultiPolygon":
+        rings = []
+        for polygon in coordinates:
+            rings.extend(polygon)
+        return rings
+
+    return []
+
+
+def get_geojson_bbox(features):
+    """Calculate a simple lon/lat bounding box for GeoJSON features."""
+    longitudes = []
+    latitudes = []
+
+    for feature in features:
+        for ring in get_geometry_rings(feature.get("geometry", {})):
+            for longitude, latitude in ring:
+                longitudes.append(longitude)
+                latitudes.append(latitude)
+
+    if not longitudes or not latitudes:
+        return (99, 0, 120, 8)
+
+    return (min(longitudes), min(latitudes), max(longitudes), max(latitudes))
+
+
+def project_geo_point(longitude, latitude, bbox, width, height, padding):
+    """Project lon/lat into the SVG viewport with preserved aspect ratio."""
+    min_lon, min_lat, max_lon, max_lat = bbox
+    lon_span = max(max_lon - min_lon, 0.0001)
+    lat_span = max(max_lat - min_lat, 0.0001)
+    scale = min((width - padding * 2) / lon_span, (height - padding * 2) / lat_span)
+    map_width = lon_span * scale
+    map_height = lat_span * scale
+    offset_x = (width - map_width) / 2
+    offset_y = (height - map_height) / 2
+    x = offset_x + ((longitude - min_lon) * scale)
+    y = offset_y + ((max_lat - latitude) * scale)
+    return x, y
+
+
+def make_geojson_path(geometry, bbox, width, height, padding):
+    """Convert GeoJSON polygon coordinates into an SVG path."""
+    path_parts = []
+
+    for ring in get_geometry_rings(geometry):
+        if not ring:
+            continue
+
+        first_x, first_y = project_geo_point(
+            ring[0][0],
+            ring[0][1],
+            bbox,
+            width,
+            height,
+            padding,
+        )
+        commands = [f"M {first_x:.1f} {first_y:.1f}"]
+
+        for longitude, latitude in ring[1:]:
+            x, y = project_geo_point(longitude, latitude, bbox, width, height, padding)
+            commands.append(f"L {x:.1f} {y:.1f}")
+
+        commands.append("Z")
+        path_parts.append(" ".join(commands))
+
+    return " ".join(path_parts)
+
+
+def make_malaysia_choropleth_html(map_data, title, metric_label, value_format):
+    """Build a real Malaysia state-boundary choropleth as SVG."""
+    geojson = load_malaysia_state_geojson()
+    values_by_state = {
+        row["Malaysia State"]: {
+            "average": float(row["Average"]),
+            "customers": int(row["Customers"]),
+        }
+        for _, row in map_data.iterrows()
+    }
+    features = geojson.get("features", [])
+    bbox = get_geojson_bbox(features)
+    width = 720
+    height = 330
+    padding = 18
+    values = [state_data["average"] for state_data in values_by_state.values()]
+    min_value = min(values) if values else 0
+    max_value = max(values) if values else 0
+    color_start = "#dbeafe"
+    color_end = "#17446b"
+
+    path_parts = []
+    for feature in features:
+        properties = feature.get("properties", {})
+        geometry = feature.get("geometry", {})
+        state_name = get_geojson_state_name(properties)
+        state_data = values_by_state.get(state_name)
+        path_data = make_geojson_path(geometry, bbox, width, height, padding)
+
+        if state_data:
+            average_value = state_data["average"]
+            customers = state_data["customers"]
+            fraction = 0.65 if max_value == min_value else (
+                (average_value - min_value) / (max_value - min_value)
+            )
+            fill = interpolate_hex_color(color_start, color_end, fraction)
+            tooltip = (
+                f"{state_name}: {metric_label} "
+                f"{value_format.format(average_value)} from {customers:,} customers"
+            )
+        else:
+            fill = "#e5e7eb"
+            tooltip = f"{state_name}: No data"
+
+        path_parts.append(
+            f"""
+            <path
+                d="{path_data}"
+                fill="{fill}"
+                fill-rule="evenodd"
+                stroke="#ffffff"
+                stroke-linejoin="round"
+                stroke-width="1.1"
+            >
+                <title>{escape(tooltip)}</title>
+            </path>
+            """
+        )
+
+    top_rows = []
+    for _, row in map_data.head(5).iterrows():
+        top_rows.append(
+            f"""
+            <div class="map-rank-row">
+                <span>{escape(str(row["Malaysia State"]))}</span>
+                <strong>{value_format.format(float(row["Average"]))}</strong>
+            </div>
+            """
+        )
+
+    min_label = value_format.format(min_value) if values else "0"
+    max_label = value_format.format(max_value) if values else "0"
+
+    return f"""
+    <style>
+        body {{
+            margin: 0;
+            background: #ffffff;
+            color: #0f172a;
+            font-family: "Source Sans Pro", Arial, sans-serif;
+        }}
+
+        .malaysia-map-card {{
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 14px;
+            box-sizing: border-box;
+            display: grid;
+            gap: 0.85rem;
+            grid-template-columns: minmax(0, 1fr) 180px;
+            height: 390px;
+            padding: 1rem;
+            width: 100%;
+        }}
+
+        .map-title {{
+            color: #0f172a;
+            font-size: 0.95rem;
+            font-weight: 800;
+            margin: 0 0 0.45rem;
+        }}
+
+        .map-svg {{
+            display: block;
+            height: 318px;
+            width: 100%;
+        }}
+
+        .map-svg path {{
+            filter: drop-shadow(0 1px 1px rgba(15, 23, 42, 0.08));
+            transition: opacity 0.12s ease, stroke-width 0.12s ease;
+        }}
+
+        .map-svg path:hover {{
+            opacity: 0.86;
+            stroke: #0f172a;
+            stroke-width: 1.7;
+        }}
+
+        .map-side {{
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            justify-content: center;
+            min-width: 0;
+        }}
+
+        .map-legend {{
+            display: grid;
+            gap: 0.35rem;
+        }}
+
+        .map-legend-scale {{
+            background: linear-gradient(90deg, {color_start}, {color_end});
+            border-radius: 999px;
+            height: 12px;
+        }}
+
+        .map-legend-labels {{
+            color: #334155;
+            display: flex;
+            font-size: 0.75rem;
+            font-weight: 700;
+            justify-content: space-between;
+        }}
+
+        .map-rank {{
+            display: grid;
+            gap: 0.42rem;
+        }}
+
+        .map-rank-heading {{
+            color: #0f172a;
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }}
+
+        .map-rank-row {{
+            align-items: center;
+            border-bottom: 1px solid #e2e8f0;
+            color: #1e293b;
+            display: flex;
+            font-size: 0.78rem;
+            gap: 0.45rem;
+            justify-content: space-between;
+            padding-bottom: 0.32rem;
+        }}
+
+        .map-rank-row span {{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }}
+
+        .map-rank-row strong {{
+            color: #0f172a;
+            white-space: nowrap;
+        }}
+
+        @media (max-width: 760px) {{
+            .malaysia-map-card {{
+                grid-template-columns: 1fr;
+                height: auto;
+            }}
+
+            .map-svg {{
+                height: 260px;
+            }}
+        }}
+    </style>
+    <div class="malaysia-map-card">
+        <div>
+            <h3 class="map-title">{escape(title)}</h3>
+            <svg
+                class="map-svg"
+                viewBox="0 0 {width} {height}"
+                role="img"
+                aria-label="{escape(title)}"
+            >
+                <rect x="0" y="0" width="{width}" height="{height}" rx="12" fill="#f8fafc" />
+                {"".join(path_parts)}
+            </svg>
+        </div>
+        <div class="map-side">
+            <div class="map-legend">
+                <div class="map-legend-scale"></div>
+                <div class="map-legend-labels">
+                    <span>{min_label}</span>
+                    <span>{max_label}</span>
+                </div>
+            </div>
+            <div class="map-rank">
+                <div class="map-rank-heading">Top average</div>
+                {"".join(top_rows)}
+            </div>
+        </div>
+    </div>
+    """
+
+
 def make_pie_chart_svg(labels, values):
     """Create a simple SVG donut chart without extra chart libraries."""
     total = sum(values)
@@ -1373,6 +1770,36 @@ def show_comparison_charts(customers_df):
     if customers_df.empty:
         st.info("Adjust the slicers or add customer data to see comparison charts.")
         return
+
+    map_col1, map_col2 = st.columns(2)
+
+    with map_col1:
+        show_chart_title("Malaysia Map: Average Monthly Income")
+        income_map_df = get_state_average_map_data(customers_df, "monthly_income")
+        if income_map_df.empty:
+            st.info("Add state and monthly_income columns for this Malaysia map.")
+        else:
+            income_map = make_malaysia_choropleth_html(
+                income_map_df,
+                "Average Monthly Income by State",
+                "Average income",
+                "RM {:,.2f}",
+            )
+            components.html(income_map, height=430)
+
+    with map_col2:
+        show_chart_title("Malaysia Map: Average Loyalty Points")
+        loyalty_map_df = get_state_average_map_data(customers_df, "loyalty_points")
+        if loyalty_map_df.empty:
+            st.info("Add state and loyalty_points columns for this Malaysia map.")
+        else:
+            loyalty_map = make_malaysia_choropleth_html(
+                loyalty_map_df,
+                "Average Loyalty Points by State",
+                "Average loyalty points",
+                "{:,.0f}",
+            )
+            components.html(loyalty_map, height=430)
 
     chart_col1, chart_col2 = st.columns(2)
 
