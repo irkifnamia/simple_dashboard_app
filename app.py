@@ -952,7 +952,7 @@ def make_malaysia_choropleth_html(map_data, title, metric_label, value_format):
             box-sizing: border-box;
             display: grid;
             gap: 0.85rem;
-            grid-template-columns: minmax(0, 1fr) 180px;
+            grid-template-columns: minmax(0, 1fr) minmax(145px, 24%);
             height: 390px;
             padding: 1rem;
             width: 100%;
@@ -1044,7 +1044,7 @@ def make_malaysia_choropleth_html(map_data, title, metric_label, value_format):
             white-space: nowrap;
         }}
 
-        @media (max-width: 760px) {{
+        @media (max-width: 420px) {{
             .malaysia-map-card {{
                 grid-template-columns: 1fr;
                 height: auto;
