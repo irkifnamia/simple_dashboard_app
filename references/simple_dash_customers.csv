@@ -1,0 +1,501 @@
+customer_code,full_name,age,monthly_income,total_orders,loyalty_points,email,phone,date_of_birth,address,city,state,postcode,country,membership_status
+CUST001,James Garcia,44,9461.99,20,541,user1@example.com,016-5474947,2003-02-09,94037 Yates Corner Apt. 864,Subang Jaya,Selangor,19401,Malaysia,Active
+CUST002,Maria Sullivan,47,16855.58,36,1299,user2@example.com,017-5747827,1976-05-25,6271 Dwayne Extensions,Kota Bharu,Kelantan,56662,Malaysia,Active
+CUST003,Karen Schmidt,22,6217.04,12,246,user3@example.com,014-9970495,1987-08-13,64691 Lynch Run Apt. 042,Taiping,Perak,40497,Malaysia,Active
+CUST004,Destiny Clark,25,9269.3,5,612,user4@example.com,017-2628952,2000-06-26,291 Patterson Rapid Apt. 194,Kulim,Kedah,33713,Malaysia,VIP
+CUST005,Andrew Pearson,30,2312.27,1,191,user5@example.com,012-8096702,1995-04-06,96908 Andrews Spring Suite 042,Pasir Mas,Kelantan,28843,Malaysia,Inactive
+CUST006,Logan Garcia,30,5338.32,8,213,user6@example.com,013-8836735,1971-11-20,79974 Thompson Passage,Muar,Johor,33086,Malaysia,VIP
+CUST007,Terry Vincent,54,2556.63,5,298,user7@example.com,012-1425085,1978-01-14,627 Martinez Ridges Suite 502,Pasir Mas,Kelantan,88967,Malaysia,Active
+CUST008,Beverly Terry,26,6222.9,18,484,user8@example.com,018-9951448,1981-05-11,1919 Salazar Point Suite 095,Georgetown,Penang,45318,Malaysia,Active
+CUST009,James Hernandez,61,17114.93,19,1343,user9@example.com,013-2637904,2000-04-03,62081 Dave Centers Apt. 033,Batu Pahat,Johor,17429,Malaysia,VIP
+CUST010,Jennifer Jones,38,14331.16,36,565,user10@example.com,019-7563101,1989-10-07,069 Ward Roads,Shah Alam,Selangor,44056,Malaysia,Active
+CUST011,Justin Hood,27,15188.18,38,1051,user11@example.com,015-4750356,1968-06-21,791 Gail Mission Suite 128,Teluk Intan,Perak,84562,Malaysia,Active
+CUST012,Brenda West,55,14910.8,15,1460,user12@example.com,016-9138502,1968-06-03,1395 Wells Ford Apt. 152,Kuantan,Pahang,26616,Malaysia,Active
+CUST013,James Johnson,34,7677.8,9,571,user13@example.com,016-7643292,1979-10-16,41946 Jaime Island Apt. 512,Dungun,Terengganu,54077,Malaysia,VIP
+CUST014,Benjamin Hernandez,25,7185.11,7,285,user14@example.com,012-7207673,1980-11-23,5561 Ruiz Streets Suite 430,Muar,Johor,21290,Malaysia,VIP
+CUST015,Kimberly Moore,29,8674.09,6,184,user15@example.com,012-9178880,1985-06-09,1675 Frank Crossroad Suite 779,Dungun,Terengganu,52865,Malaysia,VIP
+CUST016,Michele Russell,46,15962.42,38,645,user16@example.com,018-8394577,2002-07-16,930 Mason Coves Apt. 460,Kulim,Kedah,12668,Malaysia,VIP
+CUST017,Carolyn Roberts,40,5305.14,16,549,user17@example.com,017-9986290,1967-09-13,9511 Charles Village,Subang Jaya,Selangor,29498,Malaysia,VIP
+CUST018,Kristin Lam,40,8401.79,16,574,user18@example.com,015-8670804,1976-06-02,276 Chapman Village Apt. 585,Pasir Mas,Kelantan,92365,Malaysia,Active
+CUST019,Deborah Lewis,62,14098.74,29,1013,user19@example.com,014-2632449,2004-07-25,889 Barbara Freeway Apt. 681,Ipoh,Perak,85728,Malaysia,Active
+CUST020,Jennifer Salas,62,7944.47,16,618,user20@example.com,012-8913983,1990-08-12,22910 Barber Course,Temerloh,Pahang,15361,Malaysia,VIP
+CUST021,Julia Lynch,43,12246.73,40,537,user21@example.com,012-9707792,2000-04-27,61371 Garza Divide,Kota Bharu,Kelantan,14937,Malaysia,Active
+CUST022,Kevin Silva,27,17440.67,32,1031,user22@example.com,015-2263336,1990-12-26,2942 Lawrence Plaza Apt. 499,Dungun,Terengganu,81721,Malaysia,Active
+CUST023,Todd Clark,59,15888.21,24,1068,user23@example.com,018-9112683,1961-07-15,294 Michael Village,Kuala Lumpur,WP Kuala Lumpur,35935,Malaysia,Active
+CUST024,Francisco Hall,56,14075.98,18,1082,user24@example.com,011-2424599,1967-03-03,5382 Lisa Dam,Shah Alam,Selangor,47494,Malaysia,VIP
+CUST025,Dillon Jones,63,6999.64,19,363,user25@example.com,011-5271057,1990-12-06,9960 Debbie Canyon Apt. 318,Klang,Selangor,70124,Malaysia,VIP
+CUST026,Christina Martin,51,17966.15,17,863,user26@example.com,018-3551905,2001-10-20,373 Clark Drives Apt. 593,Butterworth,Penang,10217,Malaysia,VIP
+CUST027,Terri Mcdaniel,46,11345.21,23,1067,user27@example.com,012-3809522,2001-01-22,1115 Robert Roads Suite 662,Kuala Lumpur,WP Kuala Lumpur,15923,Malaysia,VIP
+CUST028,Mr. Michael Christensen,40,16481.35,40,1499,user28@example.com,016-2464304,1965-08-30,17057 Miles Drives Suite 738,Georgetown,Penang,67354,Malaysia,Active
+CUST029,Dustin Hill,34,8438.49,16,694,user29@example.com,012-4078171,1988-12-13,6585 Timothy Mountains,Port Dickson,Negeri Sembilan,74731,Malaysia,Active
+CUST030,Calvin Fuller,32,10864.64,22,1310,user30@example.com,016-5010616,1992-04-04,4681 Alec Port Apt. 857,Alor Setar,Kedah,65205,Malaysia,VIP
+CUST031,Adam Henry,21,10619.28,20,560,user31@example.com,011-2132331,1962-04-16,266 Salinas Parkways Apt. 349,Georgetown,Penang,69404,Malaysia,VIP
+CUST032,Michelle Allen,62,10499.3,26,1281,user32@example.com,017-3084238,1980-05-02,337 Richard Track,Johor Bahru,Johor,17296,Malaysia,VIP
+CUST033,Crystal Phillips,63,8255.15,16,189,user33@example.com,010-1618126,1980-06-05,071 Hill Grove,Kuala Terengganu,Terengganu,42894,Malaysia,VIP
+CUST034,Adam Barrett,48,15979.1,30,513,user34@example.com,011-6329630,1978-10-03,2652 Patterson Crossing Apt. 669,Pasir Mas,Kelantan,83957,Malaysia,Active
+CUST035,George Neal,26,4786.93,3,31,user35@example.com,010-6526169,1967-01-21,450 Dennis Mills,Sungai Petani,Kedah,95706,Malaysia,Active
+CUST036,Valerie Savage,24,2476.65,4,27,user36@example.com,013-8299597,1979-06-17,877 Tammy Oval Apt. 328,Pasir Mas,Kelantan,57220,Malaysia,Inactive
+CUST037,Daniel Wade,41,9807.89,7,469,user37@example.com,015-4212531,1975-12-13,458 Adams Land Suite 015,Bukit Mertajam,Penang,84258,Malaysia,Active
+CUST038,Kimberly Barrett,54,14370.23,23,571,user38@example.com,016-8337920,1987-03-18,785 Davis Flat Apt. 190,Batu Pahat,Johor,89762,Malaysia,Active
+CUST039,Jeremy Tucker,39,14631.3,30,1218,user39@example.com,010-7432376,2002-07-08,0023 Angela Rapid,Batu Pahat,Johor,12336,Malaysia,Active
+CUST040,Roger Greene,59,16458.97,20,525,user40@example.com,011-7480623,1970-04-10,174 Jesse Trail,Temerloh,Pahang,42436,Malaysia,Active
+CUST041,Julie Foster DDS,33,16271.26,28,1216,user41@example.com,014-7058222,2002-12-21,63865 Vasquez Lakes,Sungai Petani,Kedah,60758,Malaysia,VIP
+CUST042,Joel Edwards,39,4766.57,2,247,user42@example.com,014-9142333,1970-08-10,1901 Davis Trail Suite 575,Subang Jaya,Selangor,21177,Malaysia,Active
+CUST043,Stanley Howard,32,14661.05,30,1458,user43@example.com,015-4697200,2002-01-11,58168 Monica View,Dungun,Terengganu,79112,Malaysia,Active
+CUST044,Ann Lewis,49,5366.35,18,325,user44@example.com,010-7209307,1973-06-14,462 Wood Shore Apt. 611,Taiping,Perak,93083,Malaysia,VIP
+CUST045,Jessica Mclaughlin,61,8466.15,17,506,user45@example.com,017-3237557,1997-02-02,35548 Gutierrez Neck,Butterworth,Penang,85577,Malaysia,Active
+CUST046,Karen Martinez,62,10929.87,36,511,user46@example.com,017-1647377,1992-03-23,79200 Courtney Locks,Dungun,Terengganu,94690,Malaysia,VIP
+CUST047,Melissa Davila,54,3698.72,2,133,user47@example.com,016-3880215,1965-07-03,7587 Charles Court Suite 194,Port Dickson,Negeri Sembilan,78676,Malaysia,Active
+CUST048,Alicia Lopez,48,14759.88,35,1453,user48@example.com,018-4633335,1980-10-03,096 Mitchell Shoal,Kuala Lumpur,WP Kuala Lumpur,28745,Malaysia,Active
+CUST049,Jordan Ingram,55,9246.71,16,365,user49@example.com,019-8541918,2002-02-14,912 Coleman Crossing Suite 952,Johor Bahru,Johor,87667,Malaysia,Active
+CUST050,David Jones,38,14186.81,16,509,user50@example.com,011-7162756,1968-09-05,6590 Dustin Highway,Ipoh,Perak,28295,Malaysia,Active
+CUST051,Anthony Taylor,26,13335.55,39,664,user51@example.com,013-9467488,1969-02-28,749 Burton Route,Seremban,Negeri Sembilan,47235,Malaysia,Active
+CUST052,Sara Mays,41,7389.64,20,475,user52@example.com,019-2364715,1992-01-31,5049 Tanya Meadow Suite 979,Taiping,Perak,95137,Malaysia,VIP
+CUST053,Douglas Villanueva Jr.,27,16820.73,15,1273,user53@example.com,016-7149172,1991-09-16,81648 Cathy Manor Suite 913,Muar,Johor,27933,Malaysia,VIP
+CUST054,Brandy Vance,35,16162.16,37,1155,user54@example.com,010-2481399,1991-02-04,87251 Salinas Roads,Port Dickson,Negeri Sembilan,30939,Malaysia,VIP
+CUST055,Jay Williams,33,2876.82,2,71,user55@example.com,019-9051137,2004-09-09,56918 Soto Ranch,Pasir Mas,Kelantan,42966,Malaysia,Inactive
+CUST056,Ashley Williamson,55,9262.42,7,245,user56@example.com,014-3511542,1973-04-19,24799 Taylor Center Apt. 768,Dungun,Terengganu,49832,Malaysia,VIP
+CUST057,Kimberly Ortiz,59,12068.72,21,672,user57@example.com,014-1987333,1977-07-26,16789 Hatfield Curve Apt. 074,Kuantan,Pahang,97450,Malaysia,Active
+CUST058,Lauren Bird,33,6634.6,10,619,user58@example.com,011-9431145,2000-05-02,7931 David Springs Suite 897,Temerloh,Pahang,26873,Malaysia,VIP
+CUST059,Wendy Mills,60,6643.16,5,325,user59@example.com,017-9581765,1986-10-24,5268 Michelle Springs,Johor Bahru,Johor,31169,Malaysia,VIP
+CUST060,Michele Hogan,21,8640.64,14,257,user60@example.com,016-4599398,1997-03-12,267 Shaffer Tunnel Suite 406,Muar,Johor,40791,Malaysia,VIP
+CUST061,Kayla Schaefer,65,17767.5,38,1427,user61@example.com,015-8537604,1995-01-31,28227 Ho Knolls,Subang Jaya,Selangor,96810,Malaysia,Active
+CUST062,Jeanne Molina,43,4112.16,5,100,user62@example.com,016-2351605,1982-08-11,614 Bailey Parks,Port Dickson,Negeri Sembilan,42209,Malaysia,Active
+CUST063,Michael Day,52,8262.63,12,211,user63@example.com,019-7853619,1996-10-01,27256 John Crest,Pasir Mas,Kelantan,15704,Malaysia,VIP
+CUST064,Margaret Wyatt,35,14897.35,38,1238,user64@example.com,011-9084155,1986-10-17,334 Daisy Inlet,Kota Bharu,Kelantan,16987,Malaysia,Active
+CUST065,Susan Montgomery,34,17664.47,23,1421,user65@example.com,014-8466198,2005-01-27,247 Deleon Viaduct Apt. 008,Muar,Johor,14371,Malaysia,VIP
+CUST066,April Roberts,32,9840.91,18,628,user66@example.com,018-8729894,1976-06-06,760 Pitts Ford Apt. 432,Subang Jaya,Selangor,86175,Malaysia,Active
+CUST067,Cynthia Clarke,32,4746.22,5,267,user67@example.com,012-9148067,2003-10-07,9754 Philip Locks Suite 696,Batu Pahat,Johor,74181,Malaysia,Active
+CUST068,Ashley Woods,51,13824.86,16,925,user68@example.com,017-3924848,1998-11-12,01322 Valdez Unions,Kuala Lumpur,WP Kuala Lumpur,29784,Malaysia,VIP
+CUST069,Shelley Keller,39,7793.83,12,243,user69@example.com,017-3926056,1984-06-10,96118 House Court Suite 264,Butterworth,Penang,63738,Malaysia,Active
+CUST070,Justin English,55,17881.35,40,985,user70@example.com,017-8336891,1998-04-25,95881 Debra Harbor,Port Dickson,Negeri Sembilan,36512,Malaysia,Active
+CUST071,Tara Miller,44,4262.34,10,233,user71@example.com,013-9061162,1973-01-30,4173 Michael Spur Apt. 312,Kota Bharu,Kelantan,80727,Malaysia,Active
+CUST072,Cheryl Juarez,27,16843.19,18,1214,user72@example.com,017-7157984,1966-05-21,771 Sandoval Centers Suite 442,Klang,Selangor,33145,Malaysia,Active
+CUST073,Jodi Davis,28,13473.04,16,841,user73@example.com,014-3202013,1963-03-27,32787 Albert Ferry,Kulim,Kedah,82400,Malaysia,VIP
+CUST074,Dennis Singleton,46,10745.66,30,927,user74@example.com,012-6196886,1966-02-07,38565 Robin Villages Apt. 850,Alor Setar,Kedah,70202,Malaysia,Active
+CUST075,Shane Chapman,64,12528.7,33,724,user75@example.com,012-1411740,1966-07-05,14497 Andrew Crest Apt. 089,Kuala Terengganu,Terengganu,42466,Malaysia,VIP
+CUST076,Keith Morgan,45,17847.19,40,766,user76@example.com,018-3405881,1988-03-12,72512 Conway Via,Temerloh,Pahang,15468,Malaysia,Active
+CUST077,Jason Kane,21,9750.13,9,306,user77@example.com,015-4183090,1969-06-28,143 David Street,Kuala Terengganu,Terengganu,14074,Malaysia,VIP
+CUST078,Amber Hawkins,48,13944.42,39,1044,user78@example.com,010-2553379,2003-10-17,339 Samantha Landing Apt. 176,Kuala Terengganu,Terengganu,75310,Malaysia,Active
+CUST079,Crystal Cabrera,28,6638.41,6,501,user79@example.com,019-5925890,1993-04-30,338 Rebekah Harbor,Taiping,Perak,27202,Malaysia,Active
+CUST080,Dennis Gordon,36,2869.9,8,296,user80@example.com,017-8227781,1961-01-17,69395 Pineda Brook Apt. 137,Port Dickson,Negeri Sembilan,34189,Malaysia,Inactive
+CUST081,Cassidy Carney,25,7647.1,15,493,user81@example.com,013-7961256,1993-05-07,7922 Ford Stravenue,Bukit Mertajam,Penang,55683,Malaysia,Active
+CUST082,Kenneth Castro,32,8784.29,17,622,user82@example.com,013-6119421,1992-12-22,86858 Mcdowell Pine,Kuala Lumpur,WP Kuala Lumpur,71048,Malaysia,VIP
+CUST083,Linda Griffin,43,15809.01,38,1062,user83@example.com,015-7391766,2001-08-21,09697 Marshall Crossroad Suite 372,Klang,Selangor,96410,Malaysia,Active
+CUST084,Amber Wright,63,4443.52,1,238,user84@example.com,010-4168002,1972-10-19,438 Michael Meadow Suite 730,Dungun,Terengganu,28908,Malaysia,Active
+CUST085,Linda Johnson,36,11334.81,28,801,user85@example.com,017-6747096,1966-02-11,437 Megan Road,Alor Setar,Kedah,88928,Malaysia,Active
+CUST086,Tiffany Morse,61,12400.19,26,837,user86@example.com,015-6353076,1986-07-31,944 Gould Fork Suite 979,Kuala Lumpur,WP Kuala Lumpur,59103,Malaysia,VIP
+CUST087,Theresa Walters,33,14118.52,31,1363,user87@example.com,011-5718568,1979-01-25,0858 Ferguson Crossroad,Kuala Lumpur,WP Kuala Lumpur,88659,Malaysia,Active
+CUST088,Erica Brock,23,11798.64,33,1127,user88@example.com,018-6621340,1963-02-16,289 Jones Union Apt. 596,Seremban,Negeri Sembilan,21716,Malaysia,Active
+CUST089,Jeff Green,32,14262.66,31,1481,user89@example.com,019-4865111,1978-09-28,142 Courtney Roads Suite 781,Temerloh,Pahang,77380,Malaysia,Active
+CUST090,Mark Tucker,36,14396.89,27,678,user90@example.com,015-4715388,1980-11-05,1516 Romero Neck,Kuala Lumpur,WP Kuala Lumpur,69716,Malaysia,Active
+CUST091,Tiffany Rodriguez,58,6090.29,18,552,user91@example.com,018-4272054,1965-02-24,9748 Flores Roads Apt. 203,Johor Bahru,Johor,50491,Malaysia,Active
+CUST092,Jody Tyler,43,11085.1,38,880,user92@example.com,018-8688694,1970-11-09,93647 Gilmore Harbor Suite 860,Dungun,Terengganu,33009,Malaysia,VIP
+CUST093,Raymond Miller,30,2987.6,7,191,user93@example.com,012-2729778,2003-06-12,81718 April Rue Suite 242,Alor Setar,Kedah,19864,Malaysia,Active
+CUST094,Jeffrey Nelson,47,13974.24,36,521,user94@example.com,015-9758933,1993-06-26,4199 Robert Courts Apt. 955,Muar,Johor,35812,Malaysia,VIP
+CUST095,Tyler Chase,48,15614.2,36,1323,user95@example.com,010-9695966,1978-05-21,37654 Kemp Circles,Butterworth,Penang,29969,Malaysia,VIP
+CUST096,Douglas Kelly,27,9363.39,10,624,user96@example.com,019-2460332,1967-06-16,69548 Callahan Dale,Temerloh,Pahang,48718,Malaysia,Active
+CUST097,Timothy Sandoval,57,4317.02,6,147,user97@example.com,014-8208605,1975-06-23,55897 David Estate Suite 133,Batu Pahat,Johor,44484,Malaysia,Inactive
+CUST098,Ryan Ramos,47,12878.5,26,1020,user98@example.com,018-5511556,1976-11-24,503 Gonzalez Lakes,Sungai Petani,Kedah,51175,Malaysia,Active
+CUST099,Erin Jones,52,8776.47,11,700,user99@example.com,017-5893449,1988-08-28,08888 Sanchez Lakes,Subang Jaya,Selangor,45087,Malaysia,Active
+CUST100,Robert Mayo,36,2761.03,3,69,user100@example.com,012-6115222,1973-01-31,5744 Karen Lane,Kota Bharu,Kelantan,11344,Malaysia,Inactive
+CUST101,Robert Cannon,43,3671.02,3,61,user101@example.com,019-1225656,2000-08-26,15397 Fisher Divide,Shah Alam,Selangor,21873,Malaysia,Active
+CUST102,Carolyn Hart,32,14053.67,18,567,user102@example.com,010-7242636,1970-06-27,48141 Mcdowell Fort Apt. 178,Port Dickson,Negeri Sembilan,34844,Malaysia,Active
+CUST103,Matthew Hayes,62,11635.33,38,1046,user103@example.com,018-5571452,1985-08-20,7257 Smith Turnpike Apt. 113,Pasir Mas,Kelantan,33608,Malaysia,VIP
+CUST104,Robert Rodriguez,63,10251.83,23,596,user104@example.com,016-1151502,1962-08-30,58254 Sanders Row Apt. 298,Kuala Terengganu,Terengganu,28617,Malaysia,VIP
+CUST105,Rebecca Cobb,37,5951.58,18,659,user105@example.com,014-7924489,1984-06-07,14261 Nichols Squares,Bukit Mertajam,Penang,69388,Malaysia,VIP
+CUST106,Sabrina King,59,8318.92,19,638,user106@example.com,019-9449485,1972-07-17,66493 Ronald Pass Apt. 888,Butterworth,Penang,85334,Malaysia,Active
+CUST107,Madison Thompson,37,10112.54,30,778,user107@example.com,017-9096689,1960-12-27,73033 Garcia Cove Suite 175,Ipoh,Perak,39016,Malaysia,Active
+CUST108,Catherine Mcgrath,44,5791.8,6,429,user108@example.com,018-8190727,1990-03-17,32090 Sherry Crossroad Suite 862,Butterworth,Penang,64435,Malaysia,Active
+CUST109,Megan Rios,32,7470.47,5,491,user109@example.com,012-2630286,1969-06-22,94102 Gonzalez Camp,Pasir Mas,Kelantan,35248,Malaysia,Active
+CUST110,Jacob Shaw,29,14160.37,27,1173,user110@example.com,017-7832984,2002-07-12,947 Antonio Mission,Subang Jaya,Selangor,63688,Malaysia,Active
+CUST111,Thomas Peterson,41,16037.42,36,631,user111@example.com,017-3433808,1962-06-26,78121 Vega Oval,Kuantan,Pahang,46969,Malaysia,Active
+CUST112,Brian Baker,54,13940.66,22,1006,user112@example.com,015-9780368,1989-12-19,12426 Garcia Rapid Suite 824,Seremban,Negeri Sembilan,54467,Malaysia,VIP
+CUST113,Pedro Owens,57,6904.75,9,682,user113@example.com,015-9766788,1982-12-17,272 Brandt Ramp Apt. 357,Pasir Mas,Kelantan,15371,Malaysia,Active
+CUST114,Michael Mclean,49,3536.47,1,268,user114@example.com,018-4051230,1970-11-05,6001 George Inlet,Klang,Selangor,63823,Malaysia,Inactive
+CUST115,Daniel Clark,29,15597.85,26,738,user115@example.com,015-7441911,1993-08-19,3189 Walker Shores,Kuantan,Pahang,17894,Malaysia,Active
+CUST116,Martin Lawrence,61,5977.15,14,265,user116@example.com,012-1828497,1963-05-30,757 Farrell Curve,Ipoh,Perak,90062,Malaysia,Active
+CUST117,Laura Smith,41,17659.21,36,599,user117@example.com,018-1148504,1973-11-21,482 Fernandez Key Suite 787,Temerloh,Pahang,14138,Malaysia,VIP
+CUST118,Megan Reed,47,10477.01,28,1491,user118@example.com,011-2188740,1997-01-03,41354 Harris Fall,Muar,Johor,81548,Malaysia,VIP
+CUST119,Kelsey Williams,32,17864.17,40,1036,user119@example.com,014-9742435,1976-05-18,642 Zachary Parks,Pasir Mas,Kelantan,65531,Malaysia,Active
+CUST120,William Ayala,28,16055.58,27,1103,user120@example.com,015-3075869,1993-12-16,532 Taylor Overpass,Butterworth,Penang,49887,Malaysia,VIP
+CUST121,Victoria Harrington,59,11798.64,32,1162,user121@example.com,016-8689089,1979-09-16,57010 Vazquez Road,Alor Setar,Kedah,22692,Malaysia,VIP
+CUST122,Jade Davis,29,7866.09,6,347,user122@example.com,010-7235449,1988-06-29,554 Jeffery Summit,Pasir Mas,Kelantan,16314,Malaysia,VIP
+CUST123,Thomas Lowe,48,8356.02,13,677,user123@example.com,010-9664171,1972-12-21,5754 Flores Brooks Suite 791,Teluk Intan,Perak,46854,Malaysia,VIP
+CUST124,Erica Buck,53,14692.8,32,675,user124@example.com,014-2883490,1967-06-08,35703 Jose Bypass,Shah Alam,Selangor,31907,Malaysia,Active
+CUST125,Kenneth Webster,30,12759.62,30,874,user125@example.com,016-9922123,1963-08-06,692 Anderson Valleys Suite 217,Pasir Mas,Kelantan,78581,Malaysia,VIP
+CUST126,James Ruiz,39,12064.8,18,727,user126@example.com,019-1132418,1992-03-13,446 Martinez Skyway Suite 468,Muar,Johor,93441,Malaysia,VIP
+CUST127,Lisa Woodward,31,17822.56,34,1405,user127@example.com,016-4135815,1983-12-08,2220 Marshall Mission Suite 052,Seremban,Negeri Sembilan,71353,Malaysia,Active
+CUST128,Melinda Powell,29,15017.61,36,1292,user128@example.com,013-4785712,1973-04-07,17094 Ramirez Stravenue Suite 617,Kuantan,Pahang,25159,Malaysia,Active
+CUST129,Dennis Herring,60,13891.84,21,751,user129@example.com,018-6298120,1988-11-04,72981 Melissa Island,Seremban,Negeri Sembilan,25895,Malaysia,Active
+CUST130,Kelly Gonzalez,63,12304.01,32,1441,user130@example.com,011-9158412,1973-09-16,7916 Brittany Camp Apt. 669,Kuala Lumpur,WP Kuala Lumpur,88166,Malaysia,Active
+CUST131,Sheena Rasmussen,48,15344.42,27,565,user131@example.com,018-3918816,1973-02-20,8697 Dustin Stream,Subang Jaya,Selangor,45721,Malaysia,VIP
+CUST132,Kevin Arnold,31,12633.97,17,880,user132@example.com,015-5074827,1972-11-21,207 Chloe Mountains Apt. 214,Sungai Petani,Kedah,26324,Malaysia,Active
+CUST133,Melissa Gould,48,12293.35,35,576,user133@example.com,017-9652656,1997-04-16,40094 Joshua Bridge Apt. 205,Johor Bahru,Johor,43599,Malaysia,Active
+CUST134,Kathy Cantrell,35,11801.68,37,1426,user134@example.com,011-9332752,1965-05-06,668 Sherri Path Apt. 815,Shah Alam,Selangor,35821,Malaysia,VIP
+CUST135,Tara Davis,52,15241.67,30,1270,user135@example.com,016-7930327,1992-11-14,810 Best Mews Apt. 479,Butterworth,Penang,60591,Malaysia,Active
+CUST136,Eric Lopez,35,3326.25,8,164,user136@example.com,014-3459129,1993-08-20,079 Allen Grove Apt. 018,Temerloh,Pahang,22949,Malaysia,Active
+CUST137,Billy Henderson,64,9001.35,12,650,user137@example.com,010-4722966,1966-04-20,22886 Davis Mews Apt. 233,Kuala Lumpur,WP Kuala Lumpur,92893,Malaysia,Active
+CUST138,Anita Bradley,42,14346.09,30,1317,user138@example.com,010-5572891,1993-08-18,5326 Matthew Manors,Muar,Johor,50990,Malaysia,Active
+CUST139,Michael Mccall,44,17223.71,22,1488,user139@example.com,015-1897472,1974-12-19,945 Delgado Lakes Suite 612,Subang Jaya,Selangor,34059,Malaysia,VIP
+CUST140,Keith Miller,55,5558.9,7,522,user140@example.com,017-4172325,1972-04-29,246 Cynthia Circles,Butterworth,Penang,18605,Malaysia,VIP
+CUST141,Amanda Jenkins,44,8901.29,20,694,user141@example.com,018-8771227,1963-03-05,348 Pacheco Terrace,Kuantan,Pahang,29430,Malaysia,Active
+CUST142,Matthew Massey,45,9600.42,16,686,user142@example.com,019-9342887,1993-11-26,46262 Washington Ports,Temerloh,Pahang,20618,Malaysia,Active
+CUST143,Joshua Tyler,49,8578.99,12,347,user143@example.com,013-7301997,1980-09-09,179 Martin Ford Apt. 380,Port Dickson,Negeri Sembilan,84439,Malaysia,Active
+CUST144,Melissa Gonzalez,61,6219.09,10,482,user144@example.com,016-3157756,1997-12-14,772 Makayla Light,Muar,Johor,79164,Malaysia,Active
+CUST145,Kaylee Robbins,35,12188.89,32,578,user145@example.com,016-7860352,1961-01-12,917 Taylor Meadow Suite 862,Kuala Terengganu,Terengganu,16548,Malaysia,Active
+CUST146,Jonathon Sanchez,31,3153.33,8,82,user146@example.com,013-7075603,1984-08-25,315 Carlson Roads,Teluk Intan,Perak,63790,Malaysia,Active
+CUST147,Christian Russell,63,6875.23,19,513,user147@example.com,019-3588013,1975-07-10,92706 Horton Falls Apt. 862,Kuala Lumpur,WP Kuala Lumpur,23037,Malaysia,VIP
+CUST148,Jeremiah Douglas,22,7241.26,6,439,user148@example.com,015-1378237,2001-10-23,410 Wanda Alley Apt. 792,Kuantan,Pahang,65172,Malaysia,VIP
+CUST149,Cynthia Rodriguez,62,12094.51,15,539,user149@example.com,017-1086893,1964-09-04,12331 Ramirez Spurs Apt. 966,Muar,Johor,81390,Malaysia,VIP
+CUST150,Jennifer Ballard,35,8593.03,8,281,user150@example.com,011-7251862,1966-02-20,256 Charles Greens Apt. 429,Subang Jaya,Selangor,72206,Malaysia,Active
+CUST151,Emily Stone,21,13653.97,37,1344,user151@example.com,011-7443273,1990-09-10,0343 Shawn Crest Apt. 484,Dungun,Terengganu,56555,Malaysia,VIP
+CUST152,Sara Wheeler,36,3728.73,10,100,user152@example.com,016-5955630,1968-11-16,61378 Cruz Burg Apt. 877,Kuala Lumpur,WP Kuala Lumpur,94794,Malaysia,Active
+CUST153,Katie Flores,41,17108.93,25,1142,user153@example.com,011-4757903,1987-03-05,2766 Seth Lodge,Alor Setar,Kedah,73470,Malaysia,VIP
+CUST154,Linda Howell,32,2733.81,5,76,user154@example.com,012-3910837,1979-01-07,488 Garza Land,Kulim,Kedah,10647,Malaysia,Active
+CUST155,Jared Chase,31,13151.16,38,552,user155@example.com,015-2201955,2000-09-18,051 York Stream,Seremban,Negeri Sembilan,36516,Malaysia,VIP
+CUST156,Matthew Hughes,21,12850.86,39,577,user156@example.com,014-4910661,1962-11-19,909 Jones Gardens,Johor Bahru,Johor,27172,Malaysia,VIP
+CUST157,Thomas Robinson,23,2498.29,1,294,user157@example.com,010-8947980,1994-01-17,85095 Colleen Landing Suite 517,Alor Setar,Kedah,66846,Malaysia,Inactive
+CUST158,Jodi Evans,30,6888.02,16,473,user158@example.com,014-9920063,2000-08-05,3342 Hendricks Lakes Apt. 508,Kota Bharu,Kelantan,63292,Malaysia,VIP
+CUST159,David Mccarty,28,12600.45,31,557,user159@example.com,019-7259363,1971-05-19,657 Clark Garden Suite 101,Kuala Terengganu,Terengganu,89400,Malaysia,Active
+CUST160,Vanessa Pratt,48,2709.65,4,63,user160@example.com,011-7251810,1992-03-29,273 Cummings Knoll Suite 257,Kuala Lumpur,WP Kuala Lumpur,73166,Malaysia,Inactive
+CUST161,Gregory Bell,46,9971.14,12,205,user161@example.com,013-7449560,1986-03-07,78277 Spence Corner Apt. 023,Kota Bharu,Kelantan,91211,Malaysia,VIP
+CUST162,Danielle Young,33,10049.15,33,919,user162@example.com,016-8414816,2000-12-27,964 Nathan Expressway,Port Dickson,Negeri Sembilan,37225,Malaysia,VIP
+CUST163,Bonnie Ramos,34,12126.79,38,577,user163@example.com,017-9818742,1983-09-15,72965 Brian Ridge Apt. 021,Kuala Terengganu,Terengganu,60870,Malaysia,VIP
+CUST164,Kelly Martin,26,3489.67,9,144,user164@example.com,018-1293351,1994-10-29,775 Amber Valleys,Port Dickson,Negeri Sembilan,33908,Malaysia,Inactive
+CUST165,Sherry Hughes,23,4451.83,2,130,user165@example.com,012-7190467,1960-10-26,9497 Barbara Rest Suite 103,Butterworth,Penang,41921,Malaysia,Inactive
+CUST166,Stephen Villarreal,35,16767.21,17,712,user166@example.com,010-5044629,1962-05-13,79868 John Mills Apt. 697,Kuantan,Pahang,43185,Malaysia,Active
+CUST167,Leslie Friedman,56,11115.14,30,1182,user167@example.com,017-1108034,1996-11-23,9343 Peter Lodge Suite 500,Kuala Lumpur,WP Kuala Lumpur,74422,Malaysia,VIP
+CUST168,Stacey Barnes,65,2556.19,3,159,user168@example.com,018-2473735,1994-11-22,590 Alexander Estate Suite 883,Shah Alam,Selangor,44135,Malaysia,Inactive
+CUST169,Brandon Ward,37,12211.32,40,1330,user169@example.com,011-2810220,1973-04-13,18811 Madison Bridge Apt. 267,Batu Pahat,Johor,23633,Malaysia,VIP
+CUST170,Matthew Jacobs,28,4653.73,9,245,user170@example.com,016-5544768,1979-02-24,68603 Christopher Village,Butterworth,Penang,70907,Malaysia,Inactive
+CUST171,Devin Ali,65,2965.21,8,159,user171@example.com,012-5894871,1984-03-19,6727 Christopher Square Suite 501,Kulim,Kedah,17799,Malaysia,Inactive
+CUST172,Stephen Pitts,48,3582.46,4,99,user172@example.com,018-1906082,1981-03-28,853 Morales Common Suite 641,Alor Setar,Kedah,68219,Malaysia,Inactive
+CUST173,Derek Obrien,50,17496.19,29,614,user173@example.com,019-4670609,1997-09-24,16063 Mary Causeway Apt. 863,Bukit Mertajam,Penang,37442,Malaysia,VIP
+CUST174,Carrie Novak,56,8458.79,9,194,user174@example.com,012-4706317,1961-10-06,74473 Brown Locks Apt. 365,Alor Setar,Kedah,77389,Malaysia,Active
+CUST175,Darrell Marsh,33,11564.7,28,696,user175@example.com,016-3417440,1992-08-16,9521 Kane Avenue Suite 223,Sungai Petani,Kedah,21485,Malaysia,Active
+CUST176,Mr. Kenneth Harper,38,3679.57,9,82,user176@example.com,011-1740112,1978-12-16,20933 Bryant Isle,Klang,Selangor,28431,Malaysia,Active
+CUST177,Kelsey Jones,36,9358.76,13,562,user177@example.com,019-3752158,1975-11-27,01581 Erica Underpass Suite 589,Bukit Mertajam,Penang,56492,Malaysia,VIP
+CUST178,John Mendoza,45,14634.9,25,614,user178@example.com,012-3689202,1989-12-20,9710 Robert Lodge,Bukit Mertajam,Penang,14386,Malaysia,VIP
+CUST179,Kayla Jackson,56,12518.98,34,994,user179@example.com,010-4374672,1973-04-13,200 Christopher Meadow,Batu Pahat,Johor,86693,Malaysia,Active
+CUST180,John Matthews,53,15102.21,38,934,user180@example.com,017-7666216,1976-01-16,454 Carolyn Motorway,Batu Pahat,Johor,26782,Malaysia,Active
+CUST181,Brittany Perez,52,2658.61,6,153,user181@example.com,017-9104132,2004-06-02,868 Russell Center,Alor Setar,Kedah,71530,Malaysia,Active
+CUST182,Philip Collins,25,5390.01,8,694,user182@example.com,017-7899624,1972-02-29,9236 Cobb Shore,Taiping,Perak,84490,Malaysia,VIP
+CUST183,Richard Armstrong,46,11764.51,28,863,user183@example.com,013-6275253,1967-04-26,74755 Davis Drive,Kuala Lumpur,WP Kuala Lumpur,48974,Malaysia,VIP
+CUST184,Karen Maxwell,46,15529.57,31,1412,user184@example.com,017-9011260,1964-05-29,22416 Anthony Locks,Sungai Petani,Kedah,31787,Malaysia,Active
+CUST185,Matthew Horn,45,14897.74,18,1129,user185@example.com,019-9433462,1968-04-03,5954 Alexandra Street Apt. 083,Muar,Johor,61865,Malaysia,VIP
+CUST186,Kimberly David,44,7842.15,17,422,user186@example.com,015-8748657,1984-09-23,910 Nicole Tunnel Suite 289,Alor Setar,Kedah,10212,Malaysia,VIP
+CUST187,Amy Gallagher,64,14760.96,38,883,user187@example.com,012-5806490,1995-07-26,582 Christopher Prairie,Butterworth,Penang,62589,Malaysia,Active
+CUST188,Brian Harper,23,10506.99,28,673,user188@example.com,011-8383742,1972-10-25,70703 Kelly Fall Apt. 340,Butterworth,Penang,69565,Malaysia,VIP
+CUST189,Melissa Castro,38,13874.04,40,1178,user189@example.com,019-8696840,1987-08-24,23772 Karen Court Apt. 295,Seremban,Negeri Sembilan,12957,Malaysia,VIP
+CUST190,Joshua Patrick,47,13844.96,23,520,user190@example.com,010-9816166,1982-07-10,360 Banks Dale,Butterworth,Penang,15396,Malaysia,Active
+CUST191,Richard Kim,60,14813.23,38,611,user191@example.com,019-4815424,2004-07-27,348 Kenneth Lane Apt. 848,Taiping,Perak,11532,Malaysia,VIP
+CUST192,Travis Wilson,26,16900.72,16,1108,user192@example.com,012-8865819,1966-02-08,6178 Kevin Overpass Apt. 615,Dungun,Terengganu,91792,Malaysia,VIP
+CUST193,Tara Merritt,31,9160.87,19,274,user193@example.com,017-9112036,2002-08-28,523 Schwartz Crescent Suite 621,Seremban,Negeri Sembilan,32396,Malaysia,Active
+CUST194,Mr. Michael Duncan,24,14658.4,15,639,user194@example.com,010-6763432,1983-11-22,746 Lamb Court,Taiping,Perak,81623,Malaysia,VIP
+CUST195,Rebecca White,40,6610.57,6,421,user195@example.com,014-6414704,2001-06-11,51727 Cooley Loop Suite 550,Kulim,Kedah,61035,Malaysia,VIP
+CUST196,Amanda Silva,40,15359.45,32,1499,user196@example.com,010-1384754,1984-07-15,1400 Hernandez Canyon,Kuantan,Pahang,79890,Malaysia,Active
+CUST197,Lori King,64,13642.18,29,555,user197@example.com,018-8508946,2002-09-15,0387 Clarke Loop,Subang Jaya,Selangor,91143,Malaysia,Active
+CUST198,Sara Smith,39,4709.02,2,286,user198@example.com,017-6853753,1998-07-13,27851 Monica Parkway,Sungai Petani,Kedah,95558,Malaysia,Inactive
+CUST199,Glenn Curry,30,5575.25,12,290,user199@example.com,011-3798295,1994-02-01,223 Simmons Plains Suite 235,Pasir Mas,Kelantan,54765,Malaysia,Active
+CUST200,Scott Andrade,61,7453.2,15,318,user200@example.com,015-2079117,1966-05-23,6030 Vanessa Road Apt. 527,Temerloh,Pahang,38189,Malaysia,VIP
+CUST201,Brett Wagner,38,3115.12,9,139,user201@example.com,019-9366628,1991-02-03,8348 Andrew Skyway,Dungun,Terengganu,22060,Malaysia,Inactive
+CUST202,Monica Beard,56,6819.32,10,403,user202@example.com,014-9481253,1976-12-17,29006 Jose Underpass Suite 266,Subang Jaya,Selangor,78479,Malaysia,Active
+CUST203,Wendy Clark,28,7110.37,15,602,user203@example.com,010-7662023,1981-10-12,4716 Stephen Freeway,Muar,Johor,32800,Malaysia,Active
+CUST204,Amy Guzman,53,8209.86,18,167,user204@example.com,019-3846092,2004-07-04,078 Shawn Plains,Butterworth,Penang,75293,Malaysia,Active
+CUST205,Nancy Phillips,46,9457.67,6,605,user205@example.com,013-5334270,2005-04-17,051 Rodriguez Orchard Apt. 224,Kulim,Kedah,46299,Malaysia,Active
+CUST206,Jessica Pham,63,13538.98,27,1087,user206@example.com,017-6402625,1976-10-26,858 Rowland Islands,Kuala Terengganu,Terengganu,40399,Malaysia,Active
+CUST207,Heather Gonzales,60,3831.87,6,289,user207@example.com,013-7281660,1984-05-22,41746 Katie Crossroad,Kuantan,Pahang,82458,Malaysia,Inactive
+CUST208,Steven Meza,34,8499.07,7,477,user208@example.com,011-1502853,1968-09-16,7401 Jordan Extensions,Shah Alam,Selangor,50071,Malaysia,Active
+CUST209,Faith Kelley,49,6442.88,19,360,user209@example.com,019-3898042,1993-08-05,32657 Selena Divide,Pasir Mas,Kelantan,54582,Malaysia,VIP
+CUST210,Jose Coleman,46,14227.04,31,1399,user210@example.com,018-9301016,1992-12-28,85871 Davidson Lock,Ipoh,Perak,30280,Malaysia,Active
+CUST211,Anna Krueger,43,6650.66,18,252,user211@example.com,019-4459355,1987-03-03,60831 Matthew Trafficway,Seremban,Negeri Sembilan,18974,Malaysia,VIP
+CUST212,Sara Mason,28,4321.32,2,289,user212@example.com,016-9027288,1982-06-04,9351 Bolton Crescent Suite 593,Kuala Terengganu,Terengganu,90733,Malaysia,Active
+CUST213,Charles Martin,59,9701.58,12,646,user213@example.com,015-9351255,2000-01-14,7699 Thomas Mission,Taiping,Perak,51953,Malaysia,Active
+CUST214,Cameron Hernandez,62,10591.81,24,771,user214@example.com,018-5702767,2003-10-15,969 Jason Plains Apt. 945,Kuala Lumpur,WP Kuala Lumpur,61508,Malaysia,Active
+CUST215,Michael Daniels,21,4450.7,10,104,user215@example.com,017-8229155,1961-03-13,246 Fields Circles,Muar,Johor,79036,Malaysia,Active
+CUST216,Breanna Weeks,51,11514.87,17,842,user216@example.com,018-3314161,1981-09-22,0796 Spencer Cliffs Apt. 692,Pasir Mas,Kelantan,75426,Malaysia,Active
+CUST217,Thomas Hernandez,57,3169.05,6,114,user217@example.com,017-6326353,1960-10-01,93735 Nicholas Valleys Suite 494,Bukit Mertajam,Penang,89640,Malaysia,Active
+CUST218,Dustin Berg,41,11050.59,15,1166,user218@example.com,019-5854253,1973-06-05,220 Oneill Isle Suite 841,Kuala Lumpur,WP Kuala Lumpur,94862,Malaysia,VIP
+CUST219,Jeremy Colon,25,17503.55,33,664,user219@example.com,012-4302014,1983-11-09,2732 Jessica Via Suite 878,Sungai Petani,Kedah,38897,Malaysia,VIP
+CUST220,Lynn Schaefer,36,16523.11,25,1344,user220@example.com,011-9282272,1981-03-18,22502 Shane Fort Suite 314,Teluk Intan,Perak,56595,Malaysia,Active
+CUST221,Sergio Lee,51,10723.4,28,724,user221@example.com,010-2034156,2002-04-12,2960 Robert Greens Apt. 155,Johor Bahru,Johor,94029,Malaysia,VIP
+CUST222,Sarah Perkins,41,17633.83,35,917,user222@example.com,011-6586895,1961-03-24,3572 Jimmy Estates Apt. 770,Temerloh,Pahang,24611,Malaysia,Active
+CUST223,Elizabeth Powers,41,5400.59,5,327,user223@example.com,018-3079947,1961-01-09,48366 Michael Terrace Apt. 604,Klang,Selangor,78245,Malaysia,VIP
+CUST224,Jean Johnson,28,6597.4,19,515,user224@example.com,019-8982865,2003-08-10,774 Beth Mission,Temerloh,Pahang,68818,Malaysia,Active
+CUST225,Kristen Crawford,32,8856.46,7,308,user225@example.com,010-2963316,1962-11-13,89421 Mathews Tunnel Apt. 932,Alor Setar,Kedah,18081,Malaysia,VIP
+CUST226,David Hodges,47,9116.43,20,643,user226@example.com,019-5625688,1967-01-29,7525 Garrett Causeway Suite 144,Bukit Mertajam,Penang,52472,Malaysia,VIP
+CUST227,Thomas White,60,7577.01,18,509,user227@example.com,012-9114597,1977-10-27,09382 Jacob Spring,Ipoh,Perak,17434,Malaysia,VIP
+CUST228,Jennifer Kidd,22,5476.94,13,639,user228@example.com,016-6299528,1987-10-09,567 Jennifer Viaduct,Kulim,Kedah,57311,Malaysia,VIP
+CUST229,Ryan Thompson,49,17114.23,36,1246,user229@example.com,013-9856643,1995-03-11,143 Jessica Brooks,Sungai Petani,Kedah,90570,Malaysia,Active
+CUST230,Ann Stephens,52,14327.5,34,970,user230@example.com,014-7006854,1968-01-30,25937 Jennifer Ford Suite 478,Kuala Lumpur,WP Kuala Lumpur,12810,Malaysia,VIP
+CUST231,Bryan Schneider,33,13198.12,27,690,user231@example.com,012-9928175,1985-12-17,99509 Brown Island Suite 981,Dungun,Terengganu,58975,Malaysia,Active
+CUST232,Andrew Howard,31,4247.75,2,258,user232@example.com,011-1806390,1962-11-08,069 Victor Union Suite 869,Muar,Johor,47027,Malaysia,Active
+CUST233,Maria Morrison,28,10860.13,16,974,user233@example.com,017-1103021,1990-09-11,4305 Huffman Rapids Suite 727,Shah Alam,Selangor,63990,Malaysia,VIP
+CUST234,Brandon Williams,34,12848.82,15,646,user234@example.com,019-2890071,1977-03-04,545 Green Land,Ipoh,Perak,16842,Malaysia,Active
+CUST235,Melinda Sweeney,39,3002.96,9,165,user235@example.com,016-4355244,1981-07-17,99806 Johnson Meadow,Port Dickson,Negeri Sembilan,79025,Malaysia,Inactive
+CUST236,Adam Livingston,58,2501.59,1,31,user236@example.com,013-9439839,2000-04-18,690 Joshua Flats Suite 452,Teluk Intan,Perak,70870,Malaysia,Active
+CUST237,Jeffrey Brandt,42,9317.02,18,455,user237@example.com,018-9178339,1996-01-05,996 Simpson Freeway Suite 769,Kuala Lumpur,WP Kuala Lumpur,32551,Malaysia,Active
+CUST238,Bonnie Henry,51,9889.63,10,411,user238@example.com,017-2946771,1969-10-04,2175 Smith Manor Suite 568,Shah Alam,Selangor,69772,Malaysia,VIP
+CUST239,Tim Rodriguez,53,11311.5,28,701,user239@example.com,018-7397302,2003-01-20,02053 Timothy Fort Suite 075,Kota Bharu,Kelantan,49765,Malaysia,VIP
+CUST240,Travis Walker,56,4133.41,6,279,user240@example.com,014-3065632,1976-07-16,6120 Amanda Curve Apt. 522,Dungun,Terengganu,14066,Malaysia,Active
+CUST241,Andrew Melton,29,12563.0,33,513,user241@example.com,012-1684851,1984-12-17,51603 Foley Meadows,Seremban,Negeri Sembilan,64304,Malaysia,Active
+CUST242,Victor Conner,48,5510.67,10,508,user242@example.com,012-2642865,1978-01-02,009 Marissa Underpass Suite 676,Kota Bharu,Kelantan,85627,Malaysia,Active
+CUST243,Jennifer Patel,31,8871.26,19,570,user243@example.com,017-3849574,1986-06-01,6295 Ashley Gardens Suite 740,Kuala Terengganu,Terengganu,24539,Malaysia,Active
+CUST244,Anna Craig,46,3015.21,10,253,user244@example.com,013-6069252,1979-09-10,81729 Mahoney Gateway,Kuantan,Pahang,34485,Malaysia,Inactive
+CUST245,David Davis,30,9195.64,5,568,user245@example.com,018-9584903,1971-12-27,6056 Brooke Mission,Seremban,Negeri Sembilan,30351,Malaysia,Active
+CUST246,Glenda Collins,29,9382.36,15,359,user246@example.com,018-7536008,1977-10-27,251 Lisa Rapid Apt. 307,Port Dickson,Negeri Sembilan,37059,Malaysia,Active
+CUST247,James Green,25,14131.61,28,819,user247@example.com,013-4922687,1960-09-26,4363 Helen Junctions Apt. 670,Bukit Mertajam,Penang,24687,Malaysia,Active
+CUST248,Sydney York,35,6916.46,17,589,user248@example.com,015-1981282,1984-12-04,988 Hudson View Suite 133,Dungun,Terengganu,69621,Malaysia,Active
+CUST249,Chase Nixon,36,9178.71,8,257,user249@example.com,018-6707299,1998-06-04,437 Michaela Fort Suite 297,Kuala Lumpur,WP Kuala Lumpur,47635,Malaysia,Active
+CUST250,Peter Martin,63,15951.09,25,733,user250@example.com,015-3571478,1998-01-15,064 Crosby Club,Kuala Lumpur,WP Kuala Lumpur,12855,Malaysia,VIP
+CUST251,Charles Brock,29,4187.66,1,204,user251@example.com,013-6346899,1962-11-13,666 James Isle Apt. 080,Taiping,Perak,73263,Malaysia,Active
+CUST252,John White,56,16760.53,25,605,user252@example.com,014-8467109,1973-06-25,169 James Road,Kuala Terengganu,Terengganu,50432,Malaysia,VIP
+CUST253,Steven Chapman,60,16797.41,17,817,user253@example.com,010-4250329,2000-05-30,6166 Jackson Heights,Ipoh,Perak,51477,Malaysia,Active
+CUST254,Christopher Mclaughlin,33,6271.8,9,370,user254@example.com,011-2034434,1991-07-31,838 Autumn Burg,Pasir Mas,Kelantan,78041,Malaysia,VIP
+CUST255,Albert Baker,58,14574.83,16,940,user255@example.com,015-3502529,1994-12-03,11719 Coffey Island,Kota Bharu,Kelantan,96236,Malaysia,VIP
+CUST256,Jennifer Cuevas,44,4120.58,10,45,user256@example.com,019-9069048,1969-06-06,40664 Stephanie Fords Apt. 193,Muar,Johor,10119,Malaysia,Active
+CUST257,William Henderson,31,10622.11,31,1134,user257@example.com,013-6327163,1995-01-31,8601 Kelly Loaf,Kuala Terengganu,Terengganu,13154,Malaysia,Active
+CUST258,Jason Sanchez,23,7948.19,14,467,user258@example.com,011-3111891,1998-10-20,80912 Elizabeth Well Suite 313,Georgetown,Penang,89353,Malaysia,VIP
+CUST259,Michael Hernandez,42,6564.98,17,262,user259@example.com,014-3344471,1993-04-08,880 Hughes View,Ipoh,Perak,52544,Malaysia,VIP
+CUST260,Cheryl Davila,41,5876.53,6,184,user260@example.com,013-8061993,1963-07-25,289 William Gardens Apt. 213,Kuala Lumpur,WP Kuala Lumpur,51623,Malaysia,Active
+CUST261,Michael Coleman,24,9497.49,14,494,user261@example.com,011-2807325,2002-11-15,74517 Austin Land Apt. 913,Sungai Petani,Kedah,11769,Malaysia,VIP
+CUST262,Jennifer Mccarthy,63,4279.96,4,203,user262@example.com,015-9971984,1980-10-28,01605 William Keys Apt. 194,Sungai Petani,Kedah,72331,Malaysia,Active
+CUST263,Michelle Nolan,29,14030.6,16,646,user263@example.com,010-9586270,1978-06-07,2265 Jason Stream,Temerloh,Pahang,44917,Malaysia,Active
+CUST264,Jeffery Gregory,55,14390.05,17,1465,user264@example.com,019-2988294,1998-10-30,735 Brad Ferry Apt. 288,Sungai Petani,Kedah,59342,Malaysia,Active
+CUST265,Kimberly Boyd,45,16820.39,33,852,user265@example.com,015-2652534,2004-11-16,078 Cristina Grove,Temerloh,Pahang,96108,Malaysia,VIP
+CUST266,Bridget Houston,47,11117.66,15,1265,user266@example.com,018-1166378,1999-05-21,75604 Barbara Circles,Klang,Selangor,87732,Malaysia,Active
+CUST267,David Castro,56,8984.45,10,541,user267@example.com,011-7064099,1974-01-31,524 Matthew Station,Butterworth,Penang,29496,Malaysia,VIP
+CUST268,Cristina Murphy,34,2429.49,8,115,user268@example.com,015-5948051,1998-03-15,61734 Johnson Extension,Sungai Petani,Kedah,67771,Malaysia,Active
+CUST269,Paige Alvarez,47,8542.47,14,272,user269@example.com,011-2143789,1963-01-18,7361 Derrick Tunnel Apt. 344,Kuantan,Pahang,89504,Malaysia,Active
+CUST270,Micheal Hall,25,2312.26,1,196,user270@example.com,019-5771084,1961-05-22,36791 Lopez Ramp,Batu Pahat,Johor,97259,Malaysia,Active
+CUST271,Brenda Hernandez,25,3034.89,5,209,user271@example.com,012-8169983,1983-09-28,077 Gomez Drive,Batu Pahat,Johor,37902,Malaysia,Inactive
+CUST272,Stephanie Hill,59,9381.09,5,333,user272@example.com,017-6320682,1971-04-24,370 Richard Highway,Dungun,Terengganu,63535,Malaysia,VIP
+CUST273,Joel Simmons,57,10022.81,32,1116,user273@example.com,010-5945163,1984-11-30,044 Rodriguez Forest,Temerloh,Pahang,86527,Malaysia,Active
+CUST274,Thomas Harper,36,2354.87,6,42,user274@example.com,019-6157900,1984-11-22,88078 Gregory Light,Shah Alam,Selangor,49162,Malaysia,Inactive
+CUST275,Phillip Cunningham,25,17155.22,36,976,user275@example.com,013-7634695,1990-10-28,50776 Horton Islands,Ipoh,Perak,60931,Malaysia,Active
+CUST276,Amy Johnson,56,6535.55,10,192,user276@example.com,013-6479290,1966-12-15,456 Leon Light Apt. 132,Batu Pahat,Johor,17519,Malaysia,Active
+CUST277,Molly Martinez,58,14331.63,36,1079,user277@example.com,011-3512410,1981-04-13,5346 Smith Highway Apt. 895,Kuala Lumpur,WP Kuala Lumpur,39382,Malaysia,Active
+CUST278,Linda Delgado,27,5336.14,7,232,user278@example.com,018-2641463,1994-07-29,9196 Carlson Wells,Kuala Terengganu,Terengganu,45341,Malaysia,VIP
+CUST279,Jacqueline Adams,62,7743.84,14,569,user279@example.com,018-2483635,1981-08-19,391 Allison Junction,Kulim,Kedah,26533,Malaysia,Active
+CUST280,Manuel Harding,62,2492.07,3,206,user280@example.com,011-8366355,1994-04-05,013 Daniel Squares,Sungai Petani,Kedah,36812,Malaysia,Active
+CUST281,Cassandra Taylor,42,7105.89,13,489,user281@example.com,018-9894835,2001-02-21,6859 Hansen Meadows,Kuantan,Pahang,62816,Malaysia,Active
+CUST282,Joanna Cameron,29,3800.7,3,97,user282@example.com,015-5061773,1980-10-01,2149 French Knolls Apt. 215,Butterworth,Penang,52545,Malaysia,Active
+CUST283,Sharon Brown,49,7852.63,15,465,user283@example.com,019-3694301,1978-02-23,20254 Troy Parkways Suite 758,Batu Pahat,Johor,96675,Malaysia,Active
+CUST284,Mark Gilbert,62,2364.39,5,258,user284@example.com,019-2344768,1985-12-16,8736 Mary Harbor,Muar,Johor,26746,Malaysia,Inactive
+CUST285,Aaron Norman,29,7836.98,13,296,user285@example.com,017-5867566,1978-07-26,30857 Harrison Parkways,Johor Bahru,Johor,14485,Malaysia,VIP
+CUST286,Kevin Williams,36,16237.3,29,969,user286@example.com,010-6201351,1962-12-30,19764 Lawrence Fort,Pasir Mas,Kelantan,78473,Malaysia,Active
+CUST287,Misty Carpenter,40,8410.15,20,322,user287@example.com,019-8524521,1985-09-02,220 Graham Key,Temerloh,Pahang,71990,Malaysia,Active
+CUST288,Benjamin Merritt,58,14404.68,18,899,user288@example.com,013-2617685,1963-06-18,53031 Alyssa Rue Suite 797,Seremban,Negeri Sembilan,44158,Malaysia,VIP
+CUST289,Annette Smith,42,3191.34,4,232,user289@example.com,018-9369042,1995-02-28,76005 Charles Motorway Apt. 809,Temerloh,Pahang,30907,Malaysia,Inactive
+CUST290,Christopher Morgan,42,7613.65,19,684,user290@example.com,017-7221486,1997-12-08,467 Tim Gateway Apt. 784,Dungun,Terengganu,53425,Malaysia,VIP
+CUST291,Samantha Duke,36,14343.81,40,1386,user291@example.com,015-8717277,1986-01-13,31613 Giles Corner,Johor Bahru,Johor,43612,Malaysia,VIP
+CUST292,Kristi Thompson,26,11233.3,33,992,user292@example.com,011-6123469,2004-09-23,99647 David Wall Apt. 599,Sungai Petani,Kedah,24143,Malaysia,VIP
+CUST293,Justin Herrera,26,7136.44,11,220,user293@example.com,017-1082463,1999-07-01,99075 Brittany Springs Apt. 387,Klang,Selangor,11298,Malaysia,VIP
+CUST294,Christopher Hines,34,13168.05,40,761,user294@example.com,017-1805347,1998-10-02,887 Allen Skyway Suite 064,Georgetown,Penang,36288,Malaysia,VIP
+CUST295,Lisa Allen,39,3409.37,9,180,user295@example.com,010-9131571,1965-10-30,4776 Steven Lodge,Kuala Lumpur,WP Kuala Lumpur,95508,Malaysia,Inactive
+CUST296,Diana Brady,36,2826.3,4,235,user296@example.com,014-9679190,1972-11-30,948 Daniel Forge,Johor Bahru,Johor,94600,Malaysia,Inactive
+CUST297,Melissa Koch,42,8292.98,7,521,user297@example.com,014-7514656,1964-01-01,24962 Robert Springs,Kulim,Kedah,60365,Malaysia,Active
+CUST298,Catherine Armstrong,35,8584.26,6,178,user298@example.com,019-6271462,1998-01-25,790 Graves Knoll Suite 443,Bukit Mertajam,Penang,51470,Malaysia,Active
+CUST299,Gabriella Sherman,23,14312.52,27,1214,user299@example.com,018-9811030,1992-12-04,018 Johnson Valley Suite 176,Temerloh,Pahang,42160,Malaysia,Active
+CUST300,John Rodriguez,21,12563.62,33,1438,user300@example.com,018-8537620,1981-05-02,60181 Johnson Mountain,Temerloh,Pahang,11240,Malaysia,VIP
+CUST301,Mr. Michael Kelly,27,7764.21,14,389,user301@example.com,017-6193613,1972-09-25,068 Jeanne Lock,Kulim,Kedah,81373,Malaysia,VIP
+CUST302,Cindy Allen,56,5159.81,14,162,user302@example.com,016-3417450,1984-01-21,097 Isabella Walks,Muar,Johor,33949,Malaysia,VIP
+CUST303,Eric Woods,33,4438.5,1,89,user303@example.com,014-1161915,1989-06-05,9630 Vang Mews,Alor Setar,Kedah,35111,Malaysia,Active
+CUST304,Donald Murray,50,10305.91,37,584,user304@example.com,015-2025739,1971-09-26,55758 Christine Canyon Apt. 657,Klang,Selangor,21229,Malaysia,Active
+CUST305,Anthony Hale,44,13363.13,19,926,user305@example.com,012-8850852,1966-11-18,54924 Shaun Trail,Alor Setar,Kedah,73211,Malaysia,Active
+CUST306,William Chambers,58,7575.0,17,443,user306@example.com,011-7121602,1965-06-14,491 Jennifer Ford,Kuantan,Pahang,42410,Malaysia,VIP
+CUST307,Lisa Smith,44,7349.34,6,473,user307@example.com,019-8814133,1987-01-20,747 Kelley Plaza Apt. 724,Teluk Intan,Perak,23068,Malaysia,Active
+CUST308,Emily Cooper,26,12467.26,34,1005,user308@example.com,017-3036502,1984-05-19,84876 Mercer Point Suite 963,Port Dickson,Negeri Sembilan,35993,Malaysia,Active
+CUST309,Robert Macdonald,38,5410.2,10,506,user309@example.com,017-9066047,1979-01-26,55623 Kenneth Streets,Georgetown,Penang,38596,Malaysia,VIP
+CUST310,Victoria Martin,40,3870.58,5,235,user310@example.com,014-3861692,1995-12-01,5733 Jackie Trace,Seremban,Negeri Sembilan,74826,Malaysia,Inactive
+CUST311,Mary Phillips,60,8140.9,10,675,user311@example.com,019-1787187,1961-09-06,1483 Ortiz Creek,Kuala Lumpur,WP Kuala Lumpur,73867,Malaysia,Active
+CUST312,Maria Rivas,35,13235.49,26,1332,user312@example.com,012-1936082,1994-02-06,56586 Ballard Unions Apt. 894,Johor Bahru,Johor,46087,Malaysia,Active
+CUST313,John Davis,42,6178.33,19,291,user313@example.com,017-1647545,1976-09-19,442 Brittany Viaduct Suite 354,Georgetown,Penang,13752,Malaysia,VIP
+CUST314,Edward Clayton,37,7653.16,5,303,user314@example.com,019-6216412,1978-09-30,78277 Browning Burgs,Subang Jaya,Selangor,16540,Malaysia,VIP
+CUST315,Anthony Cline,50,13248.87,32,942,user315@example.com,014-3486312,1974-02-06,25224 Kevin Square,Muar,Johor,67000,Malaysia,VIP
+CUST316,George Lutz,65,17595.67,22,1340,user316@example.com,011-8238503,1970-06-19,670 Brian Views,Ipoh,Perak,51209,Malaysia,Active
+CUST317,Brian Perkins,30,12998.24,31,803,user317@example.com,018-4101047,1970-09-30,490 Amy Alley Suite 124,Kota Bharu,Kelantan,81758,Malaysia,VIP
+CUST318,Kathleen Bradley,65,3891.22,8,243,user318@example.com,011-7966526,1996-09-25,27386 Justin Spring Suite 373,Dungun,Terengganu,70059,Malaysia,Active
+CUST319,Rachel Herrera,38,16161.96,40,828,user319@example.com,018-5669532,1999-12-03,15207 Andre Extensions Apt. 582,Kuala Lumpur,WP Kuala Lumpur,50930,Malaysia,VIP
+CUST320,Jeffery Michael,43,10725.96,31,1400,user320@example.com,011-5625032,1964-11-15,099 Hunt Forest,Subang Jaya,Selangor,42525,Malaysia,Active
+CUST321,Jessica Yoder,56,7005.62,12,250,user321@example.com,015-7273170,1989-07-15,59403 Elizabeth Curve,Dungun,Terengganu,14853,Malaysia,VIP
+CUST322,Kelly Wiley,41,13143.06,22,1253,user322@example.com,010-9057785,1997-09-17,445 William Points Apt. 332,Port Dickson,Negeri Sembilan,49021,Malaysia,VIP
+CUST323,Mariah Davis,34,14706.51,38,650,user323@example.com,016-2578243,1965-08-20,4347 Maria Rapids,Port Dickson,Negeri Sembilan,26333,Malaysia,Active
+CUST324,George Wright,40,2965.33,8,226,user324@example.com,019-2910997,1998-05-11,7777 Crawford Field,Batu Pahat,Johor,69998,Malaysia,Inactive
+CUST325,Crystal Meyer,28,7597.36,19,314,user325@example.com,012-3201450,1989-07-21,30452 Joseph Parks,Alor Setar,Kedah,52929,Malaysia,VIP
+CUST326,Denise Guerrero,51,13371.28,19,997,user326@example.com,017-6074712,1962-10-08,3854 Patricia Plains,Dungun,Terengganu,30255,Malaysia,Active
+CUST327,Jill Kelley,34,9992.54,16,351,user327@example.com,011-2980243,1971-02-23,75055 Suzanne Coves,Kuala Lumpur,WP Kuala Lumpur,85905,Malaysia,VIP
+CUST328,Jonathan King,51,11591.07,27,739,user328@example.com,018-6117837,1960-07-21,439 Lopez Circles Apt. 939,Bukit Mertajam,Penang,94041,Malaysia,VIP
+CUST329,Wesley Day,57,3075.74,6,291,user329@example.com,011-2199143,1991-06-18,87042 Christina Brooks Suite 609,Johor Bahru,Johor,24757,Malaysia,Active
+CUST330,Sean Sweeney,38,7706.81,9,485,user330@example.com,012-7568882,1963-02-25,3926 Warren Road Apt. 749,Sungai Petani,Kedah,11389,Malaysia,VIP
+CUST331,Nicholas Jones,60,9852.84,14,579,user331@example.com,015-8348682,1984-02-05,8508 Matthew Bridge,Taiping,Perak,11057,Malaysia,VIP
+CUST332,Lisa Nichols,63,14025.54,29,1330,user332@example.com,010-5150477,1992-08-24,5537 Christy Wells Suite 023,Butterworth,Penang,27432,Malaysia,VIP
+CUST333,Meredith Martinez,28,13812.05,28,787,user333@example.com,015-9753764,1960-08-23,48038 Marsh Wells Apt. 032,Alor Setar,Kedah,28565,Malaysia,VIP
+CUST334,William Taylor,53,13429.7,38,533,user334@example.com,013-6374795,1982-04-30,383 Jimenez Gateway Suite 498,Dungun,Terengganu,54540,Malaysia,VIP
+CUST335,Mathew Olson,52,9422.9,8,441,user335@example.com,019-2332370,2002-12-28,639 Delgado Roads Apt. 750,Kuantan,Pahang,96276,Malaysia,Active
+CUST336,Steven Bates,45,11537.61,34,1152,user336@example.com,011-8763156,1969-04-19,0804 Howard Burg,Sungai Petani,Kedah,40346,Malaysia,Active
+CUST337,Stephen Parrish,52,4613.79,10,160,user337@example.com,012-4719328,1973-06-11,241 Cassandra Highway,Butterworth,Penang,26520,Malaysia,Inactive
+CUST338,Paul Ross,47,15952.0,37,978,user338@example.com,012-2913252,2003-04-19,398 Vickie Trail Apt. 077,Sungai Petani,Kedah,62858,Malaysia,VIP
+CUST339,Jacob Noble,21,17528.7,26,735,user339@example.com,012-7000347,2002-05-26,09311 Angela Springs Suite 512,Port Dickson,Negeri Sembilan,11033,Malaysia,Active
+CUST340,Paul Jones,43,16816.91,34,1215,user340@example.com,015-9348522,1981-06-16,168 Matthew Ville Suite 048,Temerloh,Pahang,25577,Malaysia,VIP
+CUST341,Patricia Mcgrath,62,10597.59,39,1458,user341@example.com,010-3203223,1978-04-15,9537 Thomas Passage,Kuala Lumpur,WP Kuala Lumpur,53318,Malaysia,Active
+CUST342,Albert Weber,65,17130.06,20,649,user342@example.com,014-4077182,1987-10-12,483 Anderson Manors,Sungai Petani,Kedah,81480,Malaysia,VIP
+CUST343,Amanda Lane,47,13114.69,31,1221,user343@example.com,012-6361683,1965-11-24,8724 Bryant Ridge,Dungun,Terengganu,80710,Malaysia,Active
+CUST344,David Rojas,65,8408.0,15,187,user344@example.com,010-2746420,1999-01-30,4666 Carol Mountains Apt. 747,Teluk Intan,Perak,72562,Malaysia,Active
+CUST345,Cody Mccarthy,37,11577.53,20,509,user345@example.com,015-4351370,1966-02-21,182 Robert Fort Apt. 360,Ipoh,Perak,65406,Malaysia,Active
+CUST346,Daniel Mullins,63,12210.18,16,1379,user346@example.com,013-9866021,1985-11-23,4894 Welch Ports,Kuala Terengganu,Terengganu,91432,Malaysia,Active
+CUST347,Joseph Sanders,55,3726.15,1,94,user347@example.com,010-4272024,1990-07-16,364 Hogan Fork Apt. 154,Port Dickson,Negeri Sembilan,31558,Malaysia,Inactive
+CUST348,Philip Torres,62,14083.73,23,627,user348@example.com,015-4015210,1968-02-27,0292 Heather Plains,Seremban,Negeri Sembilan,49469,Malaysia,VIP
+CUST349,Margaret Adams,41,3541.64,10,203,user349@example.com,011-9271763,1994-12-02,75116 Terry Summit Suite 191,Taiping,Perak,32274,Malaysia,Inactive
+CUST350,April Yates,40,3544.69,5,122,user350@example.com,019-2380531,1986-07-04,9636 Green Club,Temerloh,Pahang,41297,Malaysia,Active
+CUST351,John Martinez,36,7840.33,9,681,user351@example.com,010-1040771,1979-02-28,882 Mario Drives Suite 964,Klang,Selangor,29673,Malaysia,Active
+CUST352,Julie Barron,55,14902.37,39,1407,user352@example.com,019-5833580,1991-06-19,352 Howard Points,Subang Jaya,Selangor,23810,Malaysia,VIP
+CUST353,Amanda Hood,35,17297.48,24,1416,user353@example.com,012-1382759,1973-12-22,868 Allen Grove,Kuala Lumpur,WP Kuala Lumpur,95672,Malaysia,Active
+CUST354,Michelle Wright,50,6167.38,8,159,user354@example.com,014-5588982,1972-02-20,478 David Place,Kuantan,Pahang,22472,Malaysia,Active
+CUST355,Amanda Griffin,24,4243.2,9,41,user355@example.com,013-4490722,1991-09-02,703 Cooper Manor Suite 515,Taiping,Perak,21296,Malaysia,Inactive
+CUST356,Tracy Richard,38,12587.99,28,1320,user356@example.com,012-7106183,2002-10-11,24610 Donna Estates,Kuantan,Pahang,79910,Malaysia,Active
+CUST357,Russell Compton,61,10513.46,36,1105,user357@example.com,013-5731431,1971-05-10,083 Timothy Mews,Kuantan,Pahang,26132,Malaysia,VIP
+CUST358,Michael Graham,32,7926.43,11,478,user358@example.com,015-4081195,1999-05-26,3093 Julia Brooks,Seremban,Negeri Sembilan,28374,Malaysia,VIP
+CUST359,Jessica Young,29,7859.43,18,434,user359@example.com,015-4380155,1991-12-28,6263 Michael Shores Suite 587,Dungun,Terengganu,48540,Malaysia,VIP
+CUST360,Amber Hill,65,6064.23,8,284,user360@example.com,013-2872996,1965-04-05,43655 Hayes Crossroad,Kuantan,Pahang,18301,Malaysia,Active
+CUST361,Darrell Wilson,52,8001.74,16,693,user361@example.com,013-7443196,1982-02-09,2561 Laura Ridge,Georgetown,Penang,28293,Malaysia,Active
+CUST362,Tyler Willis,43,17940.46,28,1218,user362@example.com,019-9186659,1999-04-05,194 Michael Cove Suite 394,Ipoh,Perak,55212,Malaysia,Active
+CUST363,Robert French,57,3153.87,8,255,user363@example.com,018-2729691,1963-11-27,4993 Cassandra Lakes,Kuala Terengganu,Terengganu,22255,Malaysia,Active
+CUST364,Travis Contreras,36,16571.23,22,947,user364@example.com,016-1005834,1975-11-27,976 Andrew Village Apt. 922,Temerloh,Pahang,73700,Malaysia,Active
+CUST365,Jamie Miller,45,9847.06,7,516,user365@example.com,016-5306802,1992-11-02,3082 Sanchez Points,Kota Bharu,Kelantan,31228,Malaysia,VIP
+CUST366,Joseph Arroyo,50,5001.87,16,285,user366@example.com,016-7434507,1967-06-07,279 Paula Fort,Pasir Mas,Kelantan,65445,Malaysia,Active
+CUST367,David Turner,34,7275.41,12,404,user367@example.com,013-9037115,1998-11-07,8707 Jeanette Plain,Kuala Lumpur,WP Kuala Lumpur,72305,Malaysia,VIP
+CUST368,Rachel Moore,61,5617.22,19,445,user368@example.com,018-3482774,2000-02-03,8992 Nicole Harbor Apt. 854,Kuala Lumpur,WP Kuala Lumpur,40769,Malaysia,VIP
+CUST369,Adam Greene,57,17207.65,28,558,user369@example.com,013-8709940,1994-10-06,50407 Sylvia Station,Sungai Petani,Kedah,61240,Malaysia,VIP
+CUST370,Michael Lewis,42,16132.69,39,895,user370@example.com,017-4398967,1980-08-23,6594 Brett Turnpike,Kota Bharu,Kelantan,65941,Malaysia,VIP
+CUST371,Jose Lee,42,5102.41,15,468,user371@example.com,012-6660946,1997-07-30,32142 Schaefer Rest Suite 791,Subang Jaya,Selangor,71057,Malaysia,VIP
+CUST372,Larry Herman,32,2794.81,10,300,user372@example.com,016-2265247,1983-12-10,72812 Jeremy Junctions,Ipoh,Perak,92086,Malaysia,Inactive
+CUST373,Maxwell Brown,43,7386.77,16,467,user373@example.com,013-7507579,1976-09-29,623 John Trafficway Suite 333,Teluk Intan,Perak,97020,Malaysia,Active
+CUST374,Stacy Gallegos,62,6734.77,12,687,user374@example.com,011-1932955,1971-12-22,0398 Green Corners,Subang Jaya,Selangor,36051,Malaysia,Active
+CUST375,Robert Jones,38,12161.67,22,1268,user375@example.com,019-8873653,1961-06-20,152 Martha Parks,Klang,Selangor,45032,Malaysia,Active
+CUST376,Daniel Smith,52,15753.62,19,892,user376@example.com,015-8578042,2004-12-23,6432 Mccarthy Lights,Subang Jaya,Selangor,71974,Malaysia,VIP
+CUST377,Courtney Long,53,7964.71,6,398,user377@example.com,010-8347692,1986-03-18,231 Grant Mews,Port Dickson,Negeri Sembilan,45248,Malaysia,VIP
+CUST378,Christina Cooper,62,2445.92,6,34,user378@example.com,017-1545024,1990-07-22,0980 Torres Locks,Batu Pahat,Johor,78097,Malaysia,Inactive
+CUST379,Stephanie Beasley,63,2331.72,1,105,user379@example.com,014-6833289,1993-08-13,4535 Maria Trace Apt. 086,Klang,Selangor,84023,Malaysia,Active
+CUST380,Jeffrey Clark,32,12456.18,25,1246,user380@example.com,017-1366421,1990-10-15,4009 Davis Rapid,Teluk Intan,Perak,14806,Malaysia,VIP
+CUST381,Jeff Lopez Jr.,25,17682.06,32,513,user381@example.com,015-6029821,1964-01-30,57298 Jones Squares,Temerloh,Pahang,36352,Malaysia,Active
+CUST382,Dorothy Johnson,57,4751.68,4,149,user382@example.com,012-9428771,1984-06-13,364 Moore Mews,Kulim,Kedah,52559,Malaysia,Active
+CUST383,Mikayla Campbell,28,4262.71,10,91,user383@example.com,015-7705450,1982-02-28,94926 Cassandra Locks,Port Dickson,Negeri Sembilan,26145,Malaysia,Active
+CUST384,Adrian Jones,27,8590.56,15,625,user384@example.com,017-2051089,1998-02-14,348 Gutierrez Parks Apt. 817,Kuala Terengganu,Terengganu,30312,Malaysia,Active
+CUST385,Jeffrey Manning,65,4870.39,8,119,user385@example.com,016-2300759,1968-09-26,2207 Dylan Harbors,Kota Bharu,Kelantan,76489,Malaysia,Active
+CUST386,Taylor Steele,29,3976.16,2,30,user386@example.com,011-7133916,1986-08-28,34639 Taylor Crescent,Seremban,Negeri Sembilan,17858,Malaysia,Active
+CUST387,Michelle Howell,31,5714.8,16,360,user387@example.com,015-2873860,1973-10-20,21222 Tammy Station Suite 629,Kuala Lumpur,WP Kuala Lumpur,57621,Malaysia,VIP
+CUST388,Jeffrey Vega,39,7707.24,5,458,user388@example.com,018-9627458,2003-08-21,6428 Kristi Radial Apt. 822,Kuala Lumpur,WP Kuala Lumpur,84840,Malaysia,Active
+CUST389,Mr. James Mccarthy DDS,27,3755.77,5,242,user389@example.com,012-7053726,1998-11-12,06299 Jason Freeway Suite 715,Johor Bahru,Johor,90854,Malaysia,Inactive
+CUST390,Adam Conway,39,14448.06,17,877,user390@example.com,016-2843491,1986-08-06,722 Christensen Groves,Dungun,Terengganu,38061,Malaysia,Active
+CUST391,Robert Johnson,47,15699.46,27,1032,user391@example.com,010-8901259,1990-01-29,769 Robinson Fort,Klang,Selangor,40946,Malaysia,Active
+CUST392,Dr. Emily Stewart,41,17340.45,36,907,user392@example.com,011-5965269,1966-05-10,4774 Victor Keys Suite 437,Teluk Intan,Perak,31526,Malaysia,VIP
+CUST393,John Hernandez,50,5325.68,12,512,user393@example.com,018-7605828,2000-06-26,547 Brett Burg,Klang,Selangor,75095,Malaysia,Active
+CUST394,Dawn Williams,30,11874.03,27,1001,user394@example.com,018-7898976,1991-08-16,21162 Fleming Plains,Kulim,Kedah,22312,Malaysia,Active
+CUST395,Joel Ortiz,30,17707.05,33,1173,user395@example.com,013-8151909,1965-08-23,639 Day Streets Suite 087,Temerloh,Pahang,53465,Malaysia,Active
+CUST396,Ashley Ortiz,34,13283.85,23,1481,user396@example.com,018-4598187,1992-06-21,36015 Nicole Mountain,Port Dickson,Negeri Sembilan,88846,Malaysia,Active
+CUST397,Scott Powers,40,12203.78,20,1425,user397@example.com,017-7493546,2003-03-19,4776 Roberts Court Suite 676,Teluk Intan,Perak,39275,Malaysia,Active
+CUST398,Melissa Burch,29,9725.9,9,301,user398@example.com,013-8696835,1969-05-15,6740 Phillips Skyway Suite 081,Shah Alam,Selangor,49244,Malaysia,VIP
+CUST399,Susan Kelly MD,34,9046.97,6,286,user399@example.com,014-3686593,1969-01-09,501 Miller Bridge,Kota Bharu,Kelantan,62531,Malaysia,VIP
+CUST400,Samantha Thompson,49,7259.25,13,531,user400@example.com,018-3188605,1997-06-03,204 Williams Parkway Apt. 386,Temerloh,Pahang,91098,Malaysia,Active
+CUST401,Christine Walters,28,6640.02,18,609,user401@example.com,019-2836871,1994-01-22,1904 Devon Keys,Teluk Intan,Perak,73442,Malaysia,Active
+CUST402,Jeremy Moore,21,3652.67,1,241,user402@example.com,017-5193322,1976-10-31,6880 Dawn Stravenue Suite 248,Kota Bharu,Kelantan,40977,Malaysia,Active
+CUST403,Sarah Ray,50,11791.21,21,1409,user403@example.com,015-6220856,1990-07-11,83538 Brown Shore Suite 412,Teluk Intan,Perak,46375,Malaysia,VIP
+CUST404,Brandon Wong,55,14864.87,35,1497,user404@example.com,017-1433600,1977-10-17,566 Cameron Square,Seremban,Negeri Sembilan,77544,Malaysia,VIP
+CUST405,Gabriel Jackson,55,12780.25,34,1170,user405@example.com,010-1362417,1975-03-26,41872 Kelly Divide Apt. 305,Seremban,Negeri Sembilan,30381,Malaysia,VIP
+CUST406,Michael Miller,25,9327.31,7,567,user406@example.com,014-9031646,1983-02-26,7953 Cooper Shoal,Batu Pahat,Johor,64770,Malaysia,VIP
+CUST407,Judith Williams,42,4582.67,6,197,user407@example.com,015-6508330,1972-05-30,26420 Angela Place Suite 931,Muar,Johor,24393,Malaysia,Inactive
+CUST408,Melissa Acosta,34,15712.48,27,687,user408@example.com,013-4757753,1969-04-17,0473 Carrie Ridges,Johor Bahru,Johor,41536,Malaysia,VIP
+CUST409,Charlene Wood,58,8896.23,10,315,user409@example.com,018-5091492,1962-06-06,04860 Briggs Views Suite 770,Muar,Johor,48281,Malaysia,Active
+CUST410,Kimberly Hardy,27,15714.4,35,1411,user410@example.com,017-6505159,1968-02-01,044 Hodge Estate,Muar,Johor,67217,Malaysia,Active
+CUST411,Dr. Tara Allen,29,14952.52,39,903,user411@example.com,014-4868901,1963-03-03,65192 Clark Parkways Apt. 004,Klang,Selangor,69237,Malaysia,Active
+CUST412,John Walter,61,16130.03,31,1494,user412@example.com,019-8538026,2000-06-24,1272 Mccarty Mountains Suite 950,Dungun,Terengganu,26277,Malaysia,VIP
+CUST413,Alexandra Anderson,24,9361.03,14,244,user413@example.com,016-8212490,1988-05-25,51158 Tim Shoal Suite 246,Kuala Terengganu,Terengganu,89225,Malaysia,VIP
+CUST414,Micheal Hughes,65,12463.66,37,546,user414@example.com,019-1429013,1983-11-17,50512 Misty Springs Apt. 146,Kuala Lumpur,WP Kuala Lumpur,24113,Malaysia,VIP
+CUST415,Lauren Whitaker,64,8597.25,7,694,user415@example.com,014-6057500,2004-04-07,2120 Linda Divide Apt. 560,Shah Alam,Selangor,88765,Malaysia,VIP
+CUST416,Christopher Rivera,42,17922.5,16,866,user416@example.com,010-1662556,2000-08-22,43511 Melissa Extensions,Bukit Mertajam,Penang,72316,Malaysia,Active
+CUST417,Carol Evans,36,12199.26,18,648,user417@example.com,018-7651437,1979-02-17,665 Brown Dam Apt. 996,Dungun,Terengganu,59714,Malaysia,Active
+CUST418,Kristina Ross,36,12711.82,24,1497,user418@example.com,018-5285422,1989-04-11,5731 Robert Way Apt. 848,Butterworth,Penang,38690,Malaysia,VIP
+CUST419,Sean Zamora,44,6962.39,19,694,user419@example.com,013-4563432,1990-06-13,143 Johnson Highway,Georgetown,Penang,27985,Malaysia,Active
+CUST420,Lisa Holloway,65,12007.46,40,1449,user420@example.com,012-6905548,1999-11-04,1801 Amber Mall,Kuala Lumpur,WP Kuala Lumpur,19680,Malaysia,Active
+CUST421,Jordan Tucker,38,5432.31,14,289,user421@example.com,010-6547302,2000-04-10,5129 Nicole Mission Apt. 444,Kota Bharu,Kelantan,33870,Malaysia,VIP
+CUST422,Charles Taylor,31,17054.72,32,1170,user422@example.com,014-2642079,1988-06-13,151 Steven Valley,Seremban,Negeri Sembilan,24213,Malaysia,Active
+CUST423,Alan Daniels,33,12404.08,22,969,user423@example.com,012-6688513,1963-08-05,904 Lisa Skyway,Temerloh,Pahang,71461,Malaysia,VIP
+CUST424,Carrie Keith,48,3317.48,8,211,user424@example.com,016-8100511,1985-12-23,24012 Laurie Causeway Apt. 301,Kota Bharu,Kelantan,22562,Malaysia,Active
+CUST425,Kayla Davis,56,4013.76,6,140,user425@example.com,017-9851918,1963-09-19,14003 Kramer Camp Apt. 432,Taiping,Perak,46539,Malaysia,Inactive
+CUST426,Luis Stephens,27,5154.44,8,299,user426@example.com,018-5453913,1966-07-17,98214 Mccoy Valleys,Georgetown,Penang,93032,Malaysia,Active
+CUST427,Jennifer Flores,25,11729.8,19,1364,user427@example.com,011-4711403,1982-09-08,325 Elaine Parks Apt. 753,Dungun,Terengganu,78800,Malaysia,Active
+CUST428,Chad Lewis,32,16448.01,17,776,user428@example.com,016-9891733,2002-10-02,3841 Curtis Mills,Shah Alam,Selangor,64678,Malaysia,VIP
+CUST429,Terrence Nguyen,30,10052.64,27,623,user429@example.com,019-2559125,1983-03-24,256 Wanda Road Apt. 571,Ipoh,Perak,92589,Malaysia,Active
+CUST430,Lori Clayton,52,9079.96,5,686,user430@example.com,011-2199322,1996-04-06,0702 Diana Port,Kuala Lumpur,WP Kuala Lumpur,44378,Malaysia,VIP
+CUST431,Robert Allen,27,6895.02,8,604,user431@example.com,010-7942620,1984-01-23,84952 Brittney Route,Klang,Selangor,16963,Malaysia,VIP
+CUST432,Alex Taylor,56,15987.66,23,584,user432@example.com,011-7545427,1978-03-31,496 Sarah Point Suite 803,Kuala Lumpur,WP Kuala Lumpur,97854,Malaysia,Active
+CUST433,Diane Garcia,62,14095.72,40,634,user433@example.com,016-1341841,1981-12-15,3226 Cardenas Heights Apt. 277,Klang,Selangor,40026,Malaysia,Active
+CUST434,Leonard Mitchell,33,12347.46,23,994,user434@example.com,015-5941175,1975-11-12,672 Williams Garden Suite 813,Taiping,Perak,45737,Malaysia,Active
+CUST435,Scott Randall,54,4030.35,8,90,user435@example.com,016-1574242,1968-08-16,42989 Rachel Square,Seremban,Negeri Sembilan,97602,Malaysia,Inactive
+CUST436,Jennifer Johnson,52,3590.24,6,263,user436@example.com,018-4607897,1984-12-20,893 Linda Rest,Seremban,Negeri Sembilan,14363,Malaysia,Inactive
+CUST437,Nathan Harper,44,17472.33,38,1039,user437@example.com,012-2687282,1964-12-05,09884 Hudson Loop Apt. 297,Muar,Johor,22576,Malaysia,VIP
+CUST438,Allison Gilmore,28,12294.91,15,512,user438@example.com,010-1796412,1971-11-23,88245 Mikayla Village Suite 900,Kuala Lumpur,WP Kuala Lumpur,58273,Malaysia,Active
+CUST439,Alexa Moore,40,14144.76,23,1457,user439@example.com,013-9262547,1968-09-09,746 Shea Pike Apt. 156,Subang Jaya,Selangor,95464,Malaysia,Active
+CUST440,Catherine Bautista,63,16878.12,31,692,user440@example.com,018-5479725,1995-09-02,60935 Courtney Trail,Kuala Terengganu,Terengganu,48406,Malaysia,Active
+CUST441,Madison Hudson,31,16332.94,34,569,user441@example.com,011-1029751,1967-03-15,62579 Melissa Junctions,Seremban,Negeri Sembilan,82659,Malaysia,VIP
+CUST442,Zachary Dunlap,29,14425.01,40,750,user442@example.com,014-4876165,2003-07-02,7432 Mccoy Inlet,Shah Alam,Selangor,14052,Malaysia,VIP
+CUST443,Don Adams,54,16075.22,36,1353,user443@example.com,013-6391969,2000-12-10,2706 Jessica Rue Apt. 870,Alor Setar,Kedah,33939,Malaysia,VIP
+CUST444,Thomas Evans Jr.,62,2874.09,4,213,user444@example.com,019-1846090,1973-01-23,72350 Stacey Trail Apt. 177,Butterworth,Penang,47277,Malaysia,Active
+CUST445,Lisa Allen,22,3818.46,6,214,user445@example.com,014-1324915,1964-01-17,961 Joe Throughway Suite 089,Port Dickson,Negeri Sembilan,80271,Malaysia,Active
+CUST446,Melissa Garza,44,10129.72,32,1457,user446@example.com,010-4849082,1994-07-25,08756 Bowman Dale Suite 959,Temerloh,Pahang,47538,Malaysia,VIP
+CUST447,Travis Evans,62,8231.06,14,241,user447@example.com,010-2764585,1996-09-15,520 Powers Locks,Subang Jaya,Selangor,51139,Malaysia,Active
+CUST448,Mary Lane,44,13144.31,32,712,user448@example.com,018-4828867,1995-04-16,502 Ferguson Grove Suite 670,Teluk Intan,Perak,97559,Malaysia,VIP
+CUST449,Danielle Jackson,47,2827.81,3,170,user449@example.com,010-3629161,1990-08-06,45457 Jason Well,Pasir Mas,Kelantan,51870,Malaysia,Active
+CUST450,Mary Crosby,36,12741.96,35,858,user450@example.com,014-7899694,2001-03-02,7090 Mark Center Suite 164,Kuantan,Pahang,36748,Malaysia,Active
+CUST451,Bradley Mills,54,10564.16,17,846,user451@example.com,014-3228188,2002-09-02,2602 Thompson Grove,Kota Bharu,Kelantan,35194,Malaysia,Active
+CUST452,Kristin Miller,64,17999.18,27,1372,user452@example.com,013-6289504,1977-08-28,878 Daniel Loop,Pasir Mas,Kelantan,37101,Malaysia,Active
+CUST453,Jonathan Cruz,26,14334.99,28,1148,user453@example.com,016-3634170,2000-04-14,21428 Sanders Lock Suite 904,Shah Alam,Selangor,74745,Malaysia,VIP
+CUST454,Jason Ferrell,46,9641.28,15,338,user454@example.com,018-8492772,1982-06-02,82346 Harrington Islands Apt. 021,Pasir Mas,Kelantan,33650,Malaysia,Active
+CUST455,Samuel Brown,48,15289.52,19,1061,user455@example.com,015-8459895,1991-04-18,78986 Williams Landing,Georgetown,Penang,25562,Malaysia,VIP
+CUST456,Jennifer Davenport,55,11605.43,17,894,user456@example.com,010-7052877,1999-09-13,122 Munoz Squares Suite 096,Kulim,Kedah,13152,Malaysia,VIP
+CUST457,Jeremiah Norton,64,5193.24,7,509,user457@example.com,013-2080588,1975-01-06,611 Schneider Ridge,Shah Alam,Selangor,48828,Malaysia,Active
+CUST458,Nicholas Mcpherson,44,7841.07,7,259,user458@example.com,019-2116430,1971-12-13,0462 Sonya Way,Kuantan,Pahang,66561,Malaysia,Active
+CUST459,Keith Richards,31,5971.44,19,182,user459@example.com,011-6142093,1966-10-14,1215 Holly Divide Suite 107,Port Dickson,Negeri Sembilan,85252,Malaysia,Active
+CUST460,Alan Miller,38,12137.64,24,1037,user460@example.com,014-4635326,2002-05-29,26634 Garcia Pine Apt. 858,Kulim,Kedah,91173,Malaysia,VIP
+CUST461,Emily Winters,62,11613.75,34,1034,user461@example.com,013-1690530,1993-01-27,68215 Roberto Passage Apt. 089,Shah Alam,Selangor,36045,Malaysia,VIP
+CUST462,Michael Garrett,51,5524.69,12,580,user462@example.com,012-8908854,1980-04-22,60397 Ward Expressway Suite 375,Kuala Lumpur,WP Kuala Lumpur,47487,Malaysia,Active
+CUST463,Melinda Alvarez,21,13556.54,16,805,user463@example.com,017-1556476,1977-04-02,20732 Dylan Burg,Butterworth,Penang,22136,Malaysia,VIP
+CUST464,Gary Hernandez,32,9464.13,10,560,user464@example.com,016-7218609,1975-12-29,779 Miles Manor,Seremban,Negeri Sembilan,47252,Malaysia,Active
+CUST465,Christopher Flores,42,14011.03,17,790,user465@example.com,015-1244752,1983-04-09,5255 Pham Fords,Dungun,Terengganu,79191,Malaysia,Active
+CUST466,Julia Ryan,40,14914.15,27,835,user466@example.com,012-6145792,2005-03-02,5327 Moyer Branch Apt. 923,Kota Bharu,Kelantan,66736,Malaysia,VIP
+CUST467,Lauren Norris,58,10793.52,36,1084,user467@example.com,015-5089075,2003-06-05,4903 Schmidt Canyon Apt. 835,Kulim,Kedah,33526,Malaysia,Active
+CUST468,Pedro Rodriguez,32,12806.45,19,1493,user468@example.com,018-2592836,1984-03-14,975 Parker Springs Apt. 144,Dungun,Terengganu,38439,Malaysia,Active
+CUST469,Tammy Conner,61,5482.21,7,341,user469@example.com,017-7719285,1992-12-16,003 Brittany Mountains,Dungun,Terengganu,96635,Malaysia,VIP
+CUST470,Samantha Decker,30,5006.33,13,406,user470@example.com,010-2780446,2002-09-26,667 Anderson Walk,Port Dickson,Negeri Sembilan,57488,Malaysia,VIP
+CUST471,Bailey Perez DVM,34,8020.81,20,297,user471@example.com,011-7476047,1963-01-18,4565 Mercer Streets,Kuantan,Pahang,87025,Malaysia,Active
+CUST472,Alyssa Yoder,61,7256.35,11,462,user472@example.com,012-8744166,1971-07-31,65361 Justin Village Apt. 696,Butterworth,Penang,69345,Malaysia,Active
+CUST473,Vicki Allen,39,5594.08,17,295,user473@example.com,010-1965726,1988-07-01,210 Levy Glens Apt. 031,Kota Bharu,Kelantan,78840,Malaysia,Active
+CUST474,William Donaldson,43,2350.43,6,256,user474@example.com,010-8397677,1971-05-14,3609 Johnny Row,Kota Bharu,Kelantan,16070,Malaysia,Inactive
+CUST475,Richard Gonzalez,28,10321.54,27,617,user475@example.com,016-5224817,1970-12-14,11353 Jones Field Apt. 872,Seremban,Negeri Sembilan,91764,Malaysia,VIP
+CUST476,Kyle Gibson MD,24,8777.52,14,213,user476@example.com,010-1291608,1981-01-07,744 Perkins Road,Port Dickson,Negeri Sembilan,85111,Malaysia,Active
+CUST477,Mr. Matthew Rowe,21,2814.98,4,240,user477@example.com,010-1566869,1969-07-14,515 Rebecca Fall,Kuantan,Pahang,53902,Malaysia,Active
+CUST478,Lisa Wilson,55,5167.66,17,171,user478@example.com,016-5700466,1988-06-13,61835 Crawford Manors,Taiping,Perak,66321,Malaysia,VIP
+CUST479,Lauren Ramirez,38,15751.25,22,1342,user479@example.com,013-6399745,1964-08-20,7728 John Dale,Kota Bharu,Kelantan,11680,Malaysia,Active
+CUST480,Frank Esparza MD,47,11231.51,37,638,user480@example.com,013-5599326,1980-09-16,8589 Mccormick Inlet,Batu Pahat,Johor,42277,Malaysia,VIP
+CUST481,Cheryl Baker,24,7078.41,15,322,user481@example.com,019-6446540,1975-09-30,44455 Tucker Islands Apt. 884,Johor Bahru,Johor,93140,Malaysia,VIP
+CUST482,Katie Bonilla,60,12701.04,32,1390,user482@example.com,014-3681397,1992-05-31,448 Alvarado Stravenue Apt. 504,Temerloh,Pahang,83259,Malaysia,VIP
+CUST483,Miranda Graves,21,15120.52,23,1063,user483@example.com,016-2830639,1974-06-24,46380 Matthew Locks Apt. 681,Batu Pahat,Johor,79461,Malaysia,Active
+CUST484,Deborah Perry,39,15964.81,28,921,user484@example.com,019-3007561,1970-09-14,518 Dean Center Apt. 231,Kuala Terengganu,Terengganu,28330,Malaysia,VIP
+CUST485,Joshua Pierce,60,7688.2,9,167,user485@example.com,016-9626657,1990-01-09,41406 Lewis Road Apt. 672,Kuala Lumpur,WP Kuala Lumpur,71044,Malaysia,Active
+CUST486,Brian Roberts,46,9544.59,6,646,user486@example.com,010-5832055,1991-03-22,3018 Hopkins Rapids,Kuala Lumpur,WP Kuala Lumpur,33505,Malaysia,VIP
+CUST487,Robert Holmes,61,11301.63,40,1236,user487@example.com,014-7449210,2005-01-19,5516 Gregory Turnpike Apt. 891,Bukit Mertajam,Penang,81178,Malaysia,Active
+CUST488,Brittany Dawson,65,17742.83,19,576,user488@example.com,011-9034046,2001-07-27,65242 Sean Dam,Kuala Terengganu,Terengganu,70224,Malaysia,Active
+CUST489,Deanna Mcpherson,44,10817.78,20,1237,user489@example.com,013-9281213,1972-08-05,0406 Jackson Avenue,Dungun,Terengganu,59499,Malaysia,VIP
+CUST490,Mary Fisher,23,16136.76,31,1402,user490@example.com,015-9543920,1983-08-18,312 Todd Course Apt. 556,Seremban,Negeri Sembilan,54064,Malaysia,Active
+CUST491,Kyle Moore,27,8916.71,14,294,user491@example.com,018-1849712,2000-09-29,83383 Davis Loop Apt. 200,Taiping,Perak,36752,Malaysia,VIP
+CUST492,Kevin Campbell,37,15514.01,17,1117,user492@example.com,011-1609406,1980-12-14,737 Joshua Rapids Apt. 939,Kuantan,Pahang,83204,Malaysia,Active
+CUST493,Charles Harrell,61,8835.81,6,202,user493@example.com,010-2448554,2002-11-21,14396 Cook Stream,Kuala Terengganu,Terengganu,54531,Malaysia,Active
+CUST494,Thomas Ellis,33,2823.94,9,52,user494@example.com,012-2507754,1989-04-30,50838 Compton Fields,Muar,Johor,27333,Malaysia,Active
+CUST495,Thomas Rodriguez,57,3215.29,10,223,user495@example.com,019-7703989,1968-09-18,957 Mary Junction,Batu Pahat,Johor,55950,Malaysia,Inactive
+CUST496,Lauren Hoffman,26,8483.83,19,300,user496@example.com,014-3165373,1977-08-16,87922 Jose Forest,Butterworth,Penang,24402,Malaysia,Active
+CUST497,Daniel Werner,22,14404.0,39,1329,user497@example.com,010-6049462,1969-09-29,87381 Lindsay Highway,Subang Jaya,Selangor,77770,Malaysia,Active
+CUST498,Robert Flowers,22,16958.2,30,1099,user498@example.com,014-3044550,1997-06-01,39220 Roberts Springs,Teluk Intan,Perak,72288,Malaysia,VIP
+CUST499,Andrew Stewart,59,3747.92,5,175,user499@example.com,017-8109134,1998-08-23,9645 Moore Manor,Teluk Intan,Perak,80971,Malaysia,Inactive
+CUST500,Sean Delgado,62,5300.08,11,580,user500@example.com,014-5564794,1964-12-26,153 Kennedy Island,Kuala Terengganu,Terengganu,18973,Malaysia,Active
