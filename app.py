@@ -1,5 +1,8 @@
+import importlib
 import os
+import sys
 from html import escape
+from pathlib import Path
 from urllib.parse import quote
 
 import pandas as pd
@@ -195,6 +198,20 @@ DEFAULT_CUSTOMER_FIELDS = ["customer_code", "customer_name", "email", "phone"]
 
 # These fields are usually managed by the database, so we do not edit them here.
 READ_ONLY_FIELDS = ["id", "created_at", "updated_at"]
+ML_DIR = Path(__file__).resolve().parent / "ml"
+MODELS_DIR = Path(__file__).resolve().parent / "models"
+MODEL_NOT_FOUND_MESSAGE = "Model not found. Please train the model first."
+ML_IDENTIFIER_FIELDS = {
+    "id",
+    "user_id",
+    "customer_id",
+    "customer_code",
+    "customer_name",
+    "full_name",
+    "email",
+    "phone",
+    "address",
+}
 
 
 def apply_custom_styles():
@@ -2155,6 +2172,573 @@ def show_delete_customer_form(customers_df):
                 st.error(f"Could not delete customer: {error}")
 
 
+@st.cache_resource
+def load_existing_ml_model(model_path_text, modified_time):
+    """Load an existing ML model and refresh the cache when the file changes."""
+    import joblib
+
+    return joblib.load(model_path_text)
+
+
+def load_ml_model(model_filename):
+    """Load a saved ML model from the models folder."""
+    model_path = MODELS_DIR / model_filename
+
+    # Do not cache missing models. This lets the app detect newly trained files.
+    if not model_path.exists():
+        return None, MODEL_NOT_FOUND_MESSAGE
+
+    try:
+        model = load_existing_ml_model(str(model_path), model_path.stat().st_mtime)
+        return model, None
+    except Exception as error:
+        return None, f"Could not load model: {error}"
+
+
+def get_model_feature_columns(model):
+    """Find the original feature columns expected by a trained model pipeline."""
+    if hasattr(model, "feature_names_in_"):
+        return remove_identifier_features(list(model.feature_names_in_))
+
+    preprocessor = getattr(model, "named_steps", {}).get("preprocessor")
+    if preprocessor is not None and hasattr(preprocessor, "feature_names_in_"):
+        return remove_identifier_features(list(preprocessor.feature_names_in_))
+
+    if preprocessor is not None and hasattr(preprocessor, "transformers_"):
+        columns = []
+        for _, _, transformer_columns in preprocessor.transformers_:
+            if isinstance(transformer_columns, str) and transformer_columns == "drop":
+                continue
+            if isinstance(transformer_columns, slice):
+                continue
+            if isinstance(transformer_columns, str):
+                columns.append(transformer_columns)
+            else:
+                columns.extend([column for column in transformer_columns])
+        return remove_identifier_features(list(dict.fromkeys(columns)))
+
+    return []
+
+
+def remove_identifier_features(feature_columns):
+    """Remove identifier/contact columns that should not be manually predicted."""
+    return [
+        column
+        for column in feature_columns
+        if str(column).lower() not in ML_IDENTIFIER_FIELDS
+    ]
+
+
+def is_numeric_feature(customers_df, feature_name):
+    """Decide whether a feature should use a number input."""
+    if feature_name in customers_df.columns:
+        series = customers_df[feature_name]
+        if pd.api.types.is_numeric_dtype(series):
+            return True
+
+        converted = pd.to_numeric(series, errors="coerce")
+        return converted.notna().sum() >= max(1, series.notna().sum() * 0.8)
+
+    numeric_words = [
+        "age",
+        "amount",
+        "count",
+        "days",
+        "frequency",
+        "income",
+        "loyalty",
+        "order",
+        "point",
+        "postcode",
+        "purchase",
+        "revenue",
+        "sale",
+        "total",
+    ]
+    return any(word in feature_name.lower() for word in numeric_words)
+
+
+def get_default_numeric_value(customers_df, feature_name):
+    """Choose a friendly default value for numeric prediction inputs."""
+    if feature_name not in customers_df.columns:
+        return 0.0
+
+    values = pd.to_numeric(customers_df[feature_name], errors="coerce").dropna()
+    if values.empty:
+        return 0.0
+
+    return float(values.median())
+
+
+def get_categorical_options(customers_df, feature_name):
+    """Get existing category values from the customer data for select boxes."""
+    if feature_name not in customers_df.columns:
+        return []
+
+    options = (
+        customers_df[feature_name]
+        .dropna()
+        .astype(str)
+        .sort_values()
+        .unique()
+        .tolist()
+    )
+    return options[:100]
+
+
+def render_prediction_inputs(model, customers_df, form_key):
+    """Create Streamlit inputs based on the model's original feature columns."""
+    feature_columns = get_model_feature_columns(model)
+
+    if not feature_columns:
+        st.warning("Could not detect model feature columns.")
+        return None
+
+    input_values = {}
+    columns = st.columns(2)
+
+    for index, feature_name in enumerate(feature_columns):
+        with columns[index % 2]:
+            label = str(feature_name).replace("_", " ").title()
+
+            if is_numeric_feature(customers_df, feature_name):
+                input_values[feature_name] = st.number_input(
+                    label,
+                    value=get_default_numeric_value(customers_df, feature_name),
+                    key=f"{form_key}_{feature_name}",
+                )
+            else:
+                options = get_categorical_options(customers_df, feature_name)
+                if options:
+                    input_values[feature_name] = st.selectbox(
+                        label,
+                        options,
+                        key=f"{form_key}_{feature_name}",
+                    )
+                else:
+                    input_values[feature_name] = st.text_input(
+                        label,
+                        key=f"{form_key}_{feature_name}",
+                    )
+
+    return input_values
+
+
+def predict_probability_if_available(model, input_df):
+    """Return high-risk probability when the model supports probabilities."""
+    if not hasattr(model, "predict_proba"):
+        return None
+
+    probabilities = model.predict_proba(input_df)
+    if probabilities.shape[1] < 2:
+        return None
+
+    high_risk_index = 1
+    classes = getattr(model, "classes_", None)
+    if classes is not None:
+        for index, class_name in enumerate(classes):
+            if is_high_churn_prediction(class_name):
+                high_risk_index = index
+                break
+
+    return float(probabilities[0][high_risk_index])
+
+
+def is_high_churn_prediction(prediction):
+    """Convert common model outputs into a high-risk True/False value."""
+    if isinstance(prediction, str):
+        return prediction.strip().lower() in {"1", "yes", "true", "high", "high risk"}
+
+    return bool(prediction)
+
+
+def interpret_churn_result(is_high_risk, probability):
+    """Create a short business explanation for churn predictions."""
+    if is_high_risk:
+        if probability is None:
+            return "This customer may need retention attention. Consider a personal offer, follow-up, or loyalty incentive."
+        return "This customer may need retention attention. Prioritize follow-up if the probability is high."
+
+    return "This customer appears more stable. Keep engagement consistent and continue monitoring purchase behaviour."
+
+
+def interpret_total_order_prediction(predicted_orders):
+    """Create a short business explanation for total order predictions."""
+    if predicted_orders >= 20:
+        return "This customer is likely to be a strong repeat buyer. Consider VIP treatment or bundle offers."
+    if predicted_orders >= 8:
+        return "This customer has moderate order potential. Targeted promotions may increase repeat purchases."
+    return "This customer may need more nurturing. Consider onboarding messages, discounts, or reminders."
+
+
+def show_churn_prediction_section(customers_df):
+    """Display the churn risk prediction tool."""
+    render_section_header("Section 1", "Churn Risk Prediction")
+
+    model, error_message = load_ml_model("churn_model.pkl")
+    if model is None:
+        st.warning(error_message or MODEL_NOT_FOUND_MESSAGE)
+        return
+
+    st.write(
+        "Enter customer profile and behaviour details to estimate whether the "
+        "customer has low or high churn risk."
+    )
+
+    with st.form("churn_prediction_form"):
+        input_values = render_prediction_inputs(model, customers_df, "churn")
+        submitted = st.form_submit_button("Predict Churn Risk")
+
+    if submitted and input_values is not None:
+        input_df = pd.DataFrame([input_values])
+        try:
+            prediction = model.predict(input_df)[0]
+            probability = predict_probability_if_available(model, input_df)
+        except Exception as error:
+            st.error(
+                "Could not predict churn risk with the current model. "
+                f"Please retrain the churn model. Details: {error}"
+            )
+            return
+
+        is_high_risk = is_high_churn_prediction(prediction)
+        risk_label = "High Risk" if is_high_risk else "Low Risk"
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.metric("Churn Risk", risk_label)
+        with col2:
+            if probability is not None:
+                st.metric("High Risk Probability", f"{probability:.1%}")
+            else:
+                st.metric("Probability", "Not available")
+
+        st.info(interpret_churn_result(is_high_risk, probability))
+
+
+def show_total_order_prediction_section(customers_df):
+    """Display the total order prediction tool."""
+    render_section_header("Section 2", "Total Order Prediction")
+
+    model, error_message = load_ml_model("total_order_model.pkl")
+    if model is None:
+        st.warning(error_message or MODEL_NOT_FOUND_MESSAGE)
+        return
+
+    st.write(
+        "Enter customer profile and behaviour details to estimate the expected "
+        "total number of customer orders."
+    )
+
+    with st.form("total_order_prediction_form"):
+        input_values = render_prediction_inputs(model, customers_df, "total_order")
+        submitted = st.form_submit_button("Predict Total Order")
+
+    if submitted and input_values is not None:
+        input_df = pd.DataFrame([input_values])
+        try:
+            predicted_orders = float(model.predict(input_df)[0])
+            predicted_orders = max(0, predicted_orders)
+        except Exception as error:
+            st.error(
+                "Could not predict total orders with the current model. "
+                f"Please retrain the total order model. Details: {error}"
+            )
+            return
+
+        col1, col2 = st.columns([1, 2])
+        with col1:
+            st.metric("Predicted Total Orders", f"{predicted_orders:,.2f}")
+        with col2:
+            st.info(interpret_total_order_prediction(predicted_orders))
+
+
+def show_ml_prediction_page(customers_df):
+    """Display ML prediction tools for churn risk and total orders."""
+    render_page_header(
+        "ML Prediction",
+        "Use trained machine learning models to estimate churn risk and expected total orders.",
+    )
+
+    show_churn_prediction_section(customers_df)
+    st.markdown("<br>", unsafe_allow_html=True)
+    show_total_order_prediction_section(customers_df)
+
+
+def load_evaluation_csv(filename):
+    """Load a model evaluation CSV from the models folder."""
+    file_path = MODELS_DIR / filename
+
+    if not file_path.exists():
+        return None
+
+    try:
+        return pd.read_csv(file_path)
+    except Exception as error:
+        st.error(f"Could not read {filename}: {error}")
+        return None
+
+
+def run_model_training(module_name):
+    """
+    Run one of the ML training scripts from the Streamlit app.
+
+    The training files live inside the ml folder and already contain the full
+    beginner-friendly training pipeline, including loading the latest customer
+    data and saving model/evaluation files.
+    """
+    ml_path = str(ML_DIR)
+    if ml_path not in sys.path:
+        sys.path.insert(0, ml_path)
+
+    training_module = importlib.import_module(module_name)
+    training_module.train()
+
+    # Clear cached models so the prediction page uses the latest trained files.
+    load_existing_ml_model.clear()
+
+
+def show_retrain_button(button_label, module_name, success_message):
+    """Show a retrain button and run the requested training pipeline."""
+    retrained = False
+
+    if st.button(button_label, type="primary"):
+        with st.spinner("Retraining model with latest customer data..."):
+            try:
+                run_model_training(module_name)
+                retrained = True
+            except Exception as error:
+                st.error(f"Retraining failed: {error}")
+
+        if retrained:
+            st.success(success_message)
+
+    return retrained
+
+
+def format_metric_table(df, metric_columns):
+    """Return a display-friendly copy of an evaluation table."""
+    display_df = df.copy()
+    available_metrics = [
+        column for column in metric_columns if column in display_df.columns
+    ]
+
+    for column in available_metrics:
+        display_df[column] = pd.to_numeric(display_df[column], errors="coerce")
+
+    return display_df
+
+
+def get_best_model_name(df, sort_columns, ascending):
+    """Find the best model using the same ranking logic as training."""
+    available_sort_columns = [column for column in sort_columns if column in df.columns]
+    if not available_sort_columns or "model" not in df.columns:
+        return None
+
+    sort_order = ascending[: len(available_sort_columns)]
+    ranked_df = df.sort_values(
+        by=available_sort_columns,
+        ascending=sort_order,
+        na_position="last",
+    )
+
+    if ranked_df.empty:
+        return None
+
+    return ranked_df.iloc[0]["model"]
+
+
+def show_best_model_metric(best_model_name):
+    """Display the selected best model clearly."""
+    if best_model_name:
+        st.metric("Best Selected Model", best_model_name)
+    else:
+        st.info("Best model could not be determined from this evaluation file.")
+
+
+def show_metric_bar_chart(df, metric_columns, title):
+    """Show a compact bar chart for the available model metrics."""
+    if "model" not in df.columns:
+        return
+
+    chart_columns = [column for column in metric_columns if column in df.columns]
+    if not chart_columns:
+        return
+
+    chart_df = df[["model"] + chart_columns].copy()
+    for column in chart_columns:
+        chart_df[column] = pd.to_numeric(chart_df[column], errors="coerce")
+
+    chart_df = chart_df.set_index("model")
+    st.caption(title)
+    st.bar_chart(chart_df)
+
+
+def highlight_selected_model_row(row, best_model_name):
+    """Highlight the row for the model selected by the training logic."""
+    if best_model_name and row.get("model") == best_model_name:
+        return ["background-color: #fef9c3"] * len(row)
+
+    return [""] * len(row)
+
+
+def show_feature_importance_chart(filename, title):
+    """Show a feature importance chart if the CSV file exists."""
+    importance_df = load_evaluation_csv(filename)
+    if importance_df is None:
+        st.info("Feature importance file not found yet.")
+        return
+
+    value_column = None
+    for candidate in ["importance", "absolute_coefficient"]:
+        if candidate in importance_df.columns:
+            value_column = candidate
+            break
+
+    if value_column is None or "feature" not in importance_df.columns:
+        st.info("Feature importance data is not available in the expected format.")
+        return
+
+    importance_df[value_column] = pd.to_numeric(
+        importance_df[value_column],
+        errors="coerce",
+    )
+    chart_df = (
+        importance_df.dropna(subset=[value_column])
+        .sort_values(value_column, ascending=False)
+        .head(15)
+        .set_index("feature")[[value_column]]
+    )
+
+    if chart_df.empty:
+        st.info("Feature importance data is empty.")
+        return
+
+    st.caption(title)
+    st.bar_chart(chart_df)
+
+
+def show_churn_model_evaluation():
+    """Display churn model comparison and feature importance."""
+    render_section_header("Churn model", "Churn Model Evaluation")
+
+    retrained = show_retrain_button(
+        "Retrain Churn Model",
+        "train_churn_model",
+        "Churn model retrained successfully.",
+    )
+
+    evaluation_df = load_evaluation_csv("churn_evaluation.csv")
+    if evaluation_df is None:
+        st.warning("Churn evaluation file not found. Please train the churn model first.")
+        return
+
+    metric_columns = ["accuracy", "precision", "recall", "f1_score", "roc_auc"]
+    display_df = format_metric_table(evaluation_df, metric_columns)
+    best_model_name = get_best_model_name(
+        display_df,
+        ["f1_score", "roc_auc", "accuracy"],
+        [False, False, False],
+    )
+
+    col1, col2 = st.columns([1, 2])
+    with col1:
+        show_best_model_metric(best_model_name)
+    with col2:
+        st.write("Comparison using Accuracy, Precision, Recall, F1-score, and ROC-AUC.")
+
+    if retrained:
+        st.caption("Latest metrics from the newly saved churn evaluation file.")
+
+    st.dataframe(
+        display_df.style.apply(
+            highlight_selected_model_row,
+            axis=1,
+            best_model_name=best_model_name,
+        ).highlight_max(
+            subset=[column for column in metric_columns if column in display_df.columns],
+            color="#dcfce7",
+        ),
+        use_container_width=True,
+    )
+    show_metric_bar_chart(display_df, metric_columns, "Churn model metric comparison")
+    show_feature_importance_chart(
+        "churn_feature_importance.csv",
+        "Top churn model feature importance",
+    )
+
+
+def show_total_order_model_evaluation():
+    """Display total order model comparison and feature importance."""
+    render_section_header("Total order model", "Total Order Model Evaluation")
+
+    retrained = show_retrain_button(
+        "Retrain Total Order Model",
+        "train_orders_model",
+        "Total order model retrained successfully.",
+    )
+
+    evaluation_df = load_evaluation_csv("total_order_evaluation.csv")
+    if evaluation_df is None:
+        st.warning(
+            "Total order evaluation file not found. Please train the total order model first."
+        )
+        return
+
+    metric_columns = ["mae", "rmse", "r2_score", "cv_rmse"]
+    display_df = format_metric_table(evaluation_df, metric_columns)
+    best_model_name = get_best_model_name(
+        display_df,
+        ["rmse", "r2_score"],
+        [True, False],
+    )
+
+    col1, col2 = st.columns([1, 2])
+    with col1:
+        show_best_model_metric(best_model_name)
+    with col2:
+        st.write("Comparison using MAE, RMSE, R2 score, and cross-validation RMSE.")
+
+    if retrained:
+        st.caption("Latest metrics from the newly saved total order evaluation file.")
+
+    st.dataframe(
+        display_df.style.apply(
+            highlight_selected_model_row,
+            axis=1,
+            best_model_name=best_model_name,
+        ).highlight_min(
+            subset=[column for column in ["mae", "rmse", "cv_rmse"] if column in display_df.columns],
+            color="#dcfce7",
+        ).highlight_max(
+            subset=[column for column in ["r2_score"] if column in display_df.columns],
+            color="#dbeafe",
+        ),
+        use_container_width=True,
+    )
+    show_metric_bar_chart(
+        display_df,
+        metric_columns,
+        "Total order model metric comparison",
+    )
+    show_feature_importance_chart(
+        "total_order_feature_importance.csv",
+        "Top total order model feature importance",
+    )
+
+
+def show_ml_model_evaluation_page():
+    """Display evaluation results for trained ML models."""
+    render_page_header(
+        "ML Model Evaluation",
+        "Compare model techniques, review selected winners, and inspect important features.",
+    )
+
+    show_churn_model_evaluation()
+    st.markdown("<br>", unsafe_allow_html=True)
+    show_total_order_model_evaluation()
+
+
 def show_sidebar(customers_df):
     """Display app navigation and a few compact sidebar details."""
     with st.sidebar:
@@ -2169,7 +2753,14 @@ def show_sidebar(customers_df):
 
         selected_page = st.radio(
             "Navigation",
-            ["Dashboard", "Comparison Dashboard", "Customer Data", "CRUD Management"],
+            [
+                "Dashboard",
+                "Comparison Dashboard",
+                "Customer Data",
+                "CRUD Management",
+                "ML Prediction",
+                "ML Model Evaluation",
+            ],
             label_visibility="collapsed",
         )
 
@@ -2274,6 +2865,10 @@ def run_app():
         show_customer_data_page(filtered_customers_df)
     elif selected_page == "CRUD Management":
         show_crud_management_page(customers_df, editable_fields)
+    elif selected_page == "ML Prediction":
+        show_ml_prediction_page(customers_df)
+    elif selected_page == "ML Model Evaluation":
+        show_ml_model_evaluation_page()
 
 
 # --------------------------------------------------

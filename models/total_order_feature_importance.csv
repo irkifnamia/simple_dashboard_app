@@ -1,0 +1,43 @@
+model,feature,importance
+Random Forest Regressor,numbers__monthly_income,0.7644993868849077
+Random Forest Regressor,numbers__postcode,0.057466344857476426
+Random Forest Regressor,numbers__loyalty_points,0.05028863785147748
+Random Forest Regressor,numbers__age,0.03930651126442841
+Random Forest Regressor,categories__state_Perak,0.004807024513782476
+Random Forest Regressor,categories__city_Ipoh,0.004468346862319477
+Random Forest Regressor,categories__city_Dungun,0.00417552278726212
+Random Forest Regressor,categories__city_Muar,0.0038472654189066775
+Random Forest Regressor,categories__state_Selangor,0.0038361858599552357
+Random Forest Regressor,categories__membership_status_Active,0.003655107298086616
+Random Forest Regressor,categories__state_Penang,0.0035545302737735886
+Random Forest Regressor,categories__state_Terengganu,0.003401840650476766
+Random Forest Regressor,categories__membership_status_VIP,0.003322557658853161
+Random Forest Regressor,categories__city_Shah Alam,0.003306144110545293
+Random Forest Regressor,categories__city_Georgetown,0.0030882154093956264
+Random Forest Regressor,categories__state_Negeri Sembilan,0.0030004391496089417
+Random Forest Regressor,categories__city_Butterworth,0.002663137029319441
+Random Forest Regressor,categories__state_Johor,0.0026067334513297166
+Random Forest Regressor,categories__city_Temerloh,0.0025052245203497003
+Random Forest Regressor,categories__state_Kelantan,0.002415658043993795
+Random Forest Regressor,categories__city_Kuala Terengganu,0.002308476854855416
+Random Forest Regressor,categories__city_Kuala Lumpur,0.002305175992963019
+Random Forest Regressor,categories__city_Kuantan,0.0022098877927892746
+Random Forest Regressor,categories__state_WP Kuala Lumpur,0.0021870178168814994
+Random Forest Regressor,categories__city_Seremban,0.002138930597161487
+Random Forest Regressor,categories__state_Pahang,0.0021340163062168885
+Random Forest Regressor,categories__city_Teluk Intan,0.0019280902294389975
+Random Forest Regressor,categories__state_Kedah,0.0019086211032870988
+Random Forest Regressor,categories__city_Klang,0.0018638984417818096
+Random Forest Regressor,categories__city_Kota Bharu,0.001699096049656007
+Random Forest Regressor,categories__city_Kulim,0.00162647271993261
+Random Forest Regressor,categories__city_Taiping,0.0015038078883032855
+Random Forest Regressor,categories__city_Bukit Mertajam,0.0014572714230220447
+Random Forest Regressor,categories__city_Pasir Mas,0.0013528692660074119
+Random Forest Regressor,categories__city_Subang Jaya,0.0013410218491730934
+Random Forest Regressor,categories__city_Johor Bahru,0.0013142031267100011
+Random Forest Regressor,categories__city_Sungai Petani,0.0013139654751381455
+Random Forest Regressor,categories__city_Batu Pahat,0.0012704815944405156
+Random Forest Regressor,categories__city_Alor Setar,0.0009170249651683353
+Random Forest Regressor,categories__city_Port Dickson,0.0008679979232145931
+Random Forest Regressor,categories__membership_status_Inactive,0.0001368586876095672
+Random Forest Regressor,categories__country_Malaysia,0.0

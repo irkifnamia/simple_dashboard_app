@@ -1,5 +1,7 @@
 streamlit
 supabase==2.10.0
 pandas
+scikit-learn
+joblib
 python-dotenv
 requests
