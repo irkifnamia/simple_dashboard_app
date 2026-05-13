@@ -951,10 +951,10 @@ def make_malaysia_choropleth_html(map_data, title, metric_label, value_format):
             border-radius: 14px;
             box-sizing: border-box;
             display: grid;
-            gap: 0.85rem;
-            grid-template-columns: minmax(0, 1fr) minmax(145px, 24%);
-            height: 390px;
-            padding: 1rem;
+            gap: 1rem;
+            grid-template-columns: minmax(0, 1fr) minmax(165px, 25%);
+            height: 350px;
+            padding: 1rem 1.05rem 1rem 1rem;
             width: 100%;
         }}
 
@@ -967,7 +967,7 @@ def make_malaysia_choropleth_html(map_data, title, metric_label, value_format):
 
         .map-svg {{
             display: block;
-            height: 318px;
+            height: 278px;
             width: 100%;
         }}
 
@@ -989,6 +989,7 @@ def make_malaysia_choropleth_html(map_data, title, metric_label, value_format):
             gap: 0.8rem;
             justify-content: center;
             min-width: 0;
+            padding-right: 0.25rem;
         }}
 
         .map-legend {{
@@ -1027,7 +1028,7 @@ def make_malaysia_choropleth_html(map_data, title, metric_label, value_format):
             border-bottom: 1px solid #e2e8f0;
             color: #1e293b;
             display: flex;
-            font-size: 0.78rem;
+            font-size: 0.76rem;
             gap: 0.45rem;
             justify-content: space-between;
             padding-bottom: 0.32rem;
@@ -1785,7 +1786,7 @@ def show_comparison_charts(customers_df):
                 "Average income",
                 "RM {:,.2f}",
             )
-            components.html(income_map, height=430)
+            components.html(income_map, height=350)
 
     with map_col2:
         show_chart_title("Malaysia Map: Average Loyalty Points")
@@ -1799,7 +1800,7 @@ def show_comparison_charts(customers_df):
                 "Average loyalty points",
                 "{:,.0f}",
             )
-            components.html(loyalty_map, height=430)
+            components.html(loyalty_map, height=350)
 
     chart_col1, chart_col2 = st.columns(2)
 
