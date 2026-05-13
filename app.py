@@ -365,7 +365,8 @@ def apply_custom_styles():
                 color: var(--text);
                 font-size: 0.95rem;
                 font-weight: 700;
-                margin-bottom: 0.4rem;
+                line-height: 1.25;
+                margin-bottom: 0.55rem;
             }
 
             .chart-note {
@@ -381,7 +382,17 @@ def apply_custom_styles():
                 box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
                 margin-bottom: 1rem;
                 overflow: hidden;
-                padding: 0.9rem;
+                padding: 1rem 1.1rem 1.15rem;
+            }
+
+            div[data-testid="stDataFrame"] {
+                background: var(--chart-surface);
+                border: 1px solid var(--border);
+                border-radius: 14px;
+                box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+                margin-bottom: 1rem;
+                overflow: hidden;
+                padding: 0.55rem;
             }
 
             .pie-chart-wrap {
@@ -684,7 +695,7 @@ def show_vega_chart(chart_spec, chart_data):
     chart_spec["data"] = {"values": chart_data.to_dict("records")}
     chart_spec["config"] = get_chart_config()
     chart_spec["autosize"] = {"type": "fit", "contains": "padding"}
-    chart_spec["padding"] = {"left": 8, "right": 8, "top": 8, "bottom": 8}
+    chart_spec["padding"] = {"left": 16, "right": 18, "top": 14, "bottom": 18}
     st.vega_lite_chart(chart_spec, use_container_width=True)
 
 
@@ -1153,7 +1164,7 @@ def make_pie_chart_svg(labels, values):
             box-sizing: border-box;
             display: flex;
             gap: 1rem;
-            min-height: 300px;
+            height: 330px;
             padding: 1rem;
             width: 100%;
         }}
@@ -1205,6 +1216,7 @@ def make_pie_chart_svg(labels, values):
             .pie-chart-wrap {{
                 align-items: flex-start;
                 flex-direction: column;
+                height: auto;
             }}
         }}
     </style>
@@ -1319,7 +1331,7 @@ def make_dual_pie_chart_html(first_title, first_labels, first_values, second_tit
             display: grid;
             gap: 0.75rem;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            min-height: 300px;
+            height: 330px;
             overflow: hidden;
             padding: 0.85rem;
             width: 100%;
@@ -1382,6 +1394,7 @@ def make_dual_pie_chart_html(first_title, first_labels, first_values, second_tit
         @media (max-width: 760px) {{
             .dual-pie-card {{
                 grid-template-columns: 1fr;
+                height: auto;
             }}
         }}
     </style>
