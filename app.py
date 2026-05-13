@@ -1,7 +1,9 @@
 import os
 from html import escape
+from urllib.parse import quote
 
 import pandas as pd
+import requests
 import streamlit as st
 import streamlit.components.v1 as components
 from dotenv import load_dotenv
@@ -58,6 +60,108 @@ def get_setting(name):
 SUPABASE_URL = get_setting("SUPABASE_URL")
 SUPABASE_KEY = get_setting("SUPABASE_KEY")
 
+
+class SupabaseRestResponse:
+    """Small response object that matches the .data style used below."""
+
+    def __init__(self, data):
+        self.data = data
+
+
+class SupabaseRestTable:
+    """Simple REST table helper for newer Supabase publishable keys."""
+
+    def __init__(self, supabase_url, supabase_key, table_name):
+        self.supabase_url = supabase_url.rstrip("/")
+        self.supabase_key = supabase_key
+        self.table_name = table_name
+        self.action = None
+        self.payload = None
+        self.filters = []
+        self.selected_columns = "*"
+
+    def select(self, columns):
+        self.action = "select"
+        self.selected_columns = columns
+        return self
+
+    def insert(self, payload):
+        self.action = "insert"
+        self.payload = payload
+        return self
+
+    def update(self, payload):
+        self.action = "update"
+        self.payload = payload
+        return self
+
+    def delete(self):
+        self.action = "delete"
+        return self
+
+    def eq(self, column, value):
+        safe_value = quote(str(value), safe="")
+        self.filters.append(f"{column}=eq.{safe_value}")
+        return self
+
+    def execute(self):
+        url = f"{self.supabase_url}/rest/v1/{self.table_name}"
+        headers = {
+            "apikey": self.supabase_key,
+            "Authorization": f"Bearer {self.supabase_key}",
+            "Content-Type": "application/json",
+            "Prefer": "return=representation",
+        }
+
+        if self.action == "select":
+            response = requests.get(
+                url,
+                headers=headers,
+                params={"select": self.selected_columns},
+                timeout=20,
+            )
+        elif self.action == "insert":
+            response = requests.post(url, headers=headers, json=self.payload, timeout=20)
+        elif self.action == "update":
+            response = requests.patch(
+                f"{url}?{'&'.join(self.filters)}",
+                headers=headers,
+                json=self.payload,
+                timeout=20,
+            )
+        elif self.action == "delete":
+            response = requests.delete(
+                f"{url}?{'&'.join(self.filters)}",
+                headers=headers,
+                timeout=20,
+            )
+        else:
+            raise ValueError("Choose select, insert, update, or delete before execute.")
+
+        if not response.ok:
+            raise RuntimeError(response.text)
+
+        return SupabaseRestResponse(response.json() if response.text else [])
+
+
+class SupabaseRestClient:
+    """Small client that supports the table calls used by this dashboard."""
+
+    def __init__(self, supabase_url, supabase_key):
+        self.supabase_url = supabase_url
+        self.supabase_key = supabase_key
+
+    def table(self, table_name):
+        return SupabaseRestTable(self.supabase_url, self.supabase_key, table_name)
+
+
+def create_dashboard_supabase_client(supabase_url, supabase_key):
+    """Create a Supabase client that works with old and new key formats."""
+    if supabase_key.startswith(("sb_publishable_", "sb_secret_")):
+        return SupabaseRestClient(supabase_url, supabase_key)
+
+    return create_client(supabase_url, supabase_key)
+
 # --------------------------------------------------
 # Check whether credentials exist
 # --------------------------------------------------
@@ -77,7 +181,7 @@ if (
 # Create Supabase client connection
 # --------------------------------------------------
 try:
-    supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+    supabase = create_dashboard_supabase_client(SUPABASE_URL, SUPABASE_KEY)
 except Exception:
     st.error(
         "Supabase connection failed. Check that SUPABASE_URL and SUPABASE_KEY "
