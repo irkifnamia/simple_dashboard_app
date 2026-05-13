@@ -565,19 +565,49 @@ def apply_custom_styles():
 
             .stButton button,
             .stFormSubmitButton button {
-                background: var(--primary);
-                border: 1px solid var(--primary);
+                background: var(--primary) !important;
+                border: 1px solid var(--primary) !important;
                 border-radius: 10px;
-                color: white;
+                color: #ffffff !important;
                 font-weight: 650;
                 min-height: 2.45rem;
             }
 
+            .stButton button *,
+            .stFormSubmitButton button * {
+                color: #ffffff !important;
+            }
+
             .stButton button:hover,
             .stFormSubmitButton button:hover {
-                background: var(--primary-dark);
-                border-color: var(--primary-dark);
-                color: white;
+                background: var(--primary-dark) !important;
+                border-color: var(--primary-dark) !important;
+                color: #ffffff !important;
+            }
+
+            .stButton button:hover *,
+            .stFormSubmitButton button:hover * {
+                color: #ffffff !important;
+            }
+
+            .stButton button:focus,
+            .stFormSubmitButton button:focus {
+                box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.28) !important;
+                color: #ffffff !important;
+                outline: none !important;
+            }
+
+            .stButton button:disabled,
+            .stFormSubmitButton button:disabled {
+                background: #94a3b8 !important;
+                border-color: #94a3b8 !important;
+                color: #ffffff !important;
+                opacity: 1 !important;
+            }
+
+            .stButton button:disabled *,
+            .stFormSubmitButton button:disabled * {
+                color: #ffffff !important;
             }
 
             div[data-testid="stAlert"] {
