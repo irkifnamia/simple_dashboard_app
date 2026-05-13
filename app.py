@@ -14,20 +14,45 @@ st.set_page_config(
 )
 
 # --------------------------------------------------
-# Load Supabase credentials from environment variables
+# Load Supabase credentials
 # --------------------------------------------------
 # load_dotenv() lets you keep SUPABASE_URL and SUPABASE_KEY
 # inside a local .env file while developing on your computer.
 load_dotenv()
 
-def get_setting(name):
-    """Read settings from Streamlit secrets first, then local environment."""
-    try:
-        value = st.secrets.get(name)
-    except Exception:
-        value = None
 
-    return value or os.getenv(name)
+def get_streamlit_secret(name):
+    """Try to read a value from Streamlit Cloud secrets."""
+    try:
+        # Format 1:
+        # SUPABASE_URL = "..."
+        # SUPABASE_KEY = "..."
+        if name in st.secrets:
+            return st.secrets[name]
+
+        # Format 2:
+        # [supabase]
+        # SUPABASE_URL = "..."
+        # SUPABASE_KEY = "..."
+        if "supabase" in st.secrets and name in st.secrets["supabase"]:
+            return st.secrets["supabase"][name]
+    except Exception:
+        return None
+
+    return None
+
+
+def get_setting(name):
+    """Read settings from Streamlit secrets first, then local .env."""
+    value = get_streamlit_secret(name)
+
+    if not value:
+        value = os.getenv(name)
+
+    if value:
+        return str(value).strip()
+
+    return None
 
 
 SUPABASE_URL = get_setting("SUPABASE_URL")
@@ -52,7 +77,7 @@ if (
 # Create Supabase client connection
 # --------------------------------------------------
 try:
-    supabase = create_client(SUPABASE_URL.strip(), SUPABASE_KEY.strip())
+    supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 except Exception:
     st.error(
         "Supabase connection failed. Check that SUPABASE_URL and SUPABASE_KEY "
