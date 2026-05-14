@@ -5,3 +5,4 @@ scikit-learn
 joblib
 python-dotenv
 requests
+openpyxl

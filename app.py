@@ -2401,6 +2401,166 @@ def interpret_total_order_prediction(predicted_orders):
     return "This customer may need more nurturing. Consider onboarding messages, discounts, or reminders."
 
 
+def load_uploaded_prediction_data(uploaded_file):
+    """Read an uploaded CSV or XLSX file into a pandas DataFrame."""
+    if uploaded_file is None:
+        return None
+
+    file_name = uploaded_file.name.lower()
+
+    try:
+        if file_name.endswith(".csv"):
+            return pd.read_csv(uploaded_file)
+        if file_name.endswith(".xlsx"):
+            return pd.read_excel(uploaded_file)
+    except Exception as error:
+        st.error(f"Could not read uploaded file: {error}")
+        return None
+
+    st.warning("Please upload a CSV or XLSX file.")
+    return None
+
+
+def get_missing_prediction_columns(uploaded_df, required_columns):
+    """Return model-required columns that are missing from an uploaded dataset."""
+    return [column for column in required_columns if column not in uploaded_df.columns]
+
+
+def show_missing_columns_warning(missing_columns):
+    """Display missing columns in a beginner-friendly warning."""
+    st.warning(
+        "Missing required columns: "
+        + ", ".join(str(column) for column in missing_columns)
+    )
+
+
+def build_bulk_download_name(prediction_type):
+    """Create a simple output filename for bulk prediction results."""
+    if prediction_type == "Churn prediction":
+        return "churn_prediction_results.csv"
+
+    return "total_order_prediction_results.csv"
+
+
+def show_bulk_prediction_summary(results_df, prediction_column):
+    """Display row count and simple summary metrics for bulk predictions."""
+    metric_columns = st.columns(3)
+
+    with metric_columns[0]:
+        st.metric("Rows Predicted", f"{len(results_df):,}")
+
+    if prediction_column == "predicted_churn_risk":
+        risk_counts = results_df[prediction_column].value_counts()
+        high_count = int(risk_counts.get("High Risk", 0))
+        low_count = int(risk_counts.get("Low Risk", 0))
+        with metric_columns[1]:
+            st.metric("High Risk", f"{high_count:,}")
+        with metric_columns[2]:
+            st.metric("Low Risk", f"{low_count:,}")
+    else:
+        predicted_values = pd.to_numeric(results_df[prediction_column], errors="coerce")
+        with metric_columns[1]:
+            st.metric("Average Prediction", f"{predicted_values.mean():,.2f}")
+        with metric_columns[2]:
+            st.metric("Highest Prediction", f"{predicted_values.max():,.2f}")
+
+
+def run_bulk_prediction(model, uploaded_df, prediction_type):
+    """Run the selected model for every row in the uploaded dataset."""
+    required_columns = get_model_feature_columns(model)
+    missing_columns = get_missing_prediction_columns(uploaded_df, required_columns)
+
+    if missing_columns:
+        show_missing_columns_warning(missing_columns)
+        return None, None
+
+    input_df = uploaded_df[required_columns].copy()
+    results_df = uploaded_df.copy()
+
+    if prediction_type == "Churn prediction":
+        predictions = model.predict(input_df)
+        results_df["predicted_churn_risk"] = [
+            "High Risk" if is_high_churn_prediction(prediction) else "Low Risk"
+            for prediction in predictions
+        ]
+        return results_df, "predicted_churn_risk"
+
+    predictions = model.predict(input_df)
+    results_df["predicted_total_order"] = [
+        round(max(0, float(prediction)), 2) for prediction in predictions
+    ]
+    return results_df, "predicted_total_order"
+
+
+def show_bulk_prediction_section():
+    """Display the bulk prediction upload and download workflow."""
+    render_section_header("Section 3", "Bulk Prediction")
+    st.write(
+        "Upload a CSV or XLSX file, choose a prediction type, and generate "
+        "predictions for every row in the dataset."
+    )
+
+    prediction_type = st.radio(
+        "Choose prediction type",
+        ["Churn prediction", "Total order prediction"],
+        horizontal=True,
+    )
+
+    model_filename = (
+        "churn_model.pkl"
+        if prediction_type == "Churn prediction"
+        else "total_order_model.pkl"
+    )
+    model, error_message = load_ml_model(model_filename)
+    if model is None:
+        st.warning(error_message or MODEL_NOT_FOUND_MESSAGE)
+        return
+
+    required_columns = get_model_feature_columns(model)
+    with st.expander("Required columns for this model", expanded=False):
+        st.write(", ".join(str(column) for column in required_columns))
+
+    uploaded_file = st.file_uploader(
+        "Upload prediction dataset",
+        type=["csv", "xlsx"],
+        key=f"bulk_{prediction_type}",
+    )
+    uploaded_df = load_uploaded_prediction_data(uploaded_file)
+
+    if uploaded_df is None:
+        return
+
+    st.caption("Uploaded dataset preview")
+    st.dataframe(uploaded_df.head(10), use_container_width=True)
+
+    if st.button("Run Bulk Prediction", type="primary"):
+        with st.spinner("Running predictions for all uploaded rows..."):
+            try:
+                results_df, prediction_column = run_bulk_prediction(
+                    model,
+                    uploaded_df,
+                    prediction_type,
+                )
+            except Exception as error:
+                st.error(f"Bulk prediction failed: {error}")
+                return
+
+        if results_df is None:
+            return
+
+        show_bulk_prediction_summary(results_df, prediction_column)
+        st.caption("Prediction results preview")
+        st.dataframe(results_df.head(20), use_container_width=True)
+
+        csv_data = results_df.to_csv(index=False).encode("utf-8")
+        st.download_button(
+            "Download Prediction Results CSV",
+            data=csv_data,
+            file_name=build_bulk_download_name(prediction_type),
+            mime="text/csv",
+        )
+
+
 def show_churn_prediction_section(customers_df):
     """Display the churn risk prediction tool."""
     render_section_header("Section 1", "Churn Risk Prediction")
@@ -2493,6 +2653,8 @@ def show_ml_prediction_page(customers_df):
     show_churn_prediction_section(customers_df)
     st.markdown("<br>", unsafe_allow_html=True)
     show_total_order_prediction_section(customers_df)
+    st.markdown("<br>", unsafe_allow_html=True)
+    show_bulk_prediction_section()
 
 
 def load_evaluation_csv(filename):
