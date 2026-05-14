@@ -1,0 +1,35 @@
+age,monthly_income,total_orders,loyalty_points,city,state,postcode,country,membership_status,predicted_churn_risk
+44,9461.99,20,541,Subang Jaya,Selangor,19401,Malaysia,Active,Low Risk
+47,16855.58,36,1299,Kota Bharu,Kelantan,56662,Malaysia,Active,Low Risk
+22,6217.04,12,246,Taiping,Perak,40497,Malaysia,Active,High Risk
+25,9269.3,5,612,Kulim,Kedah,33713,Malaysia,VIP,High Risk
+30,2312.27,1,191,Pasir Mas,Kelantan,28843,Malaysia,Inactive,High Risk
+30,5338.32,8,213,Muar,Johor,33086,Malaysia,VIP,High Risk
+54,2556.63,5,298,Pasir Mas,Kelantan,88967,Malaysia,Active,High Risk
+26,6222.9,18,484,Georgetown,Penang,45318,Malaysia,Active,High Risk
+61,17114.93,19,1343,Batu Pahat,Johor,17429,Malaysia,VIP,Low Risk
+38,14331.16,36,565,Shah Alam,Selangor,44056,Malaysia,Active,Low Risk
+27,15188.18,38,1051,Teluk Intan,Perak,84562,Malaysia,Active,Low Risk
+55,14910.8,15,1460,Kuantan,Pahang,26616,Malaysia,Active,Low Risk
+34,7677.8,9,571,Dungun,Terengganu,54077,Malaysia,VIP,High Risk
+25,7185.11,7,285,Muar,Johor,21290,Malaysia,VIP,High Risk
+29,8674.09,6,184,Dungun,Terengganu,52865,Malaysia,VIP,High Risk
+46,15962.42,38,645,Kulim,Kedah,12668,Malaysia,VIP,Low Risk
+40,5305.14,16,549,Subang Jaya,Selangor,29498,Malaysia,VIP,High Risk
+40,8401.79,16,574,Pasir Mas,Kelantan,92365,Malaysia,Active,Low Risk
+62,14098.74,29,1013,Ipoh,Perak,85728,Malaysia,Active,Low Risk
+62,7944.47,16,618,Temerloh,Pahang,15361,Malaysia,VIP,Low Risk
+43,12246.73,40,537,Kota Bharu,Kelantan,14937,Malaysia,Active,Low Risk
+27,17440.67,32,1031,Dungun,Terengganu,81721,Malaysia,Active,Low Risk
+59,15888.21,24,1068,Kuala Lumpur,WP Kuala Lumpur,35935,Malaysia,Active,Low Risk
+56,14075.98,18,1082,Shah Alam,Selangor,47494,Malaysia,VIP,Low Risk
+63,6999.64,19,363,Klang,Selangor,70124,Malaysia,VIP,Low Risk
+51,17966.15,17,863,Butterworth,Penang,10217,Malaysia,VIP,Low Risk
+46,11345.21,23,1067,Kuala Lumpur,WP Kuala Lumpur,15923,Malaysia,VIP,Low Risk
+40,16481.35,40,1499,Georgetown,Penang,67354,Malaysia,Active,Low Risk
+34,8438.49,16,694,Port Dickson,Negeri Sembilan,74731,Malaysia,Active,Low Risk
+32,10864.64,22,1310,Alor Setar,Kedah,65205,Malaysia,VIP,Low Risk
+21,10619.28,20,560,Georgetown,Penang,69404,Malaysia,VIP,Low Risk
+62,10499.3,26,1281,Johor Bahru,Johor,17296,Malaysia,VIP,Low Risk
+63,8255.15,16,189,Kuala Terengganu,Terengganu,42894,Malaysia,VIP,Low Risk
+48,15979.1,30,513,Pasir Mas,Kelantan,83957,Malaysia,Active,Low Risk
